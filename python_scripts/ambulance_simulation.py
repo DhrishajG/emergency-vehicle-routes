@@ -1,9 +1,8 @@
 import traci
 
-def add_ambulance(vehicle_id, start_edge, end_edge):
+def add_ambulance(vehicle_id, route, start_edge, end_edge):
     """Adds an ambulance to the simulation with a computed route."""
     # Use findRoute to calculate the route between start_edge and end_edge
-    route = traci.simulation.findRoute(start_edge, end_edge)
     
     # Ensure the route contains valid edges
     if route.edges:

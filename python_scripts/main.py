@@ -1,7 +1,9 @@
 import traci
 from ambulance_simulation import add_ambulance, track_ambulance, end_simulation
+from graph_utils import extract_graph, reconstruct_path
 
 CONFIG_FILE = "../sumo_simulations/city_block/osm.sumocfg"
+NETWORK_FILE = "../sumo_simulations/city_block/osm.net.xml.gz"
 START_EDGE = "1128395118"  
 END_EDGE = "200574632"    
 AMBULANCE_ID = "ambulance_1"
@@ -9,12 +11,17 @@ AMBULANCE_ID = "ambulance_1"
 def main():
     """Main entry point for the simulation."""
     try:
+        # Extract the graph from the network file
+        graph = extract_graph(NETWORK_FILE)
+
         # Start the SUMO simulation
         traci.start(["sumo-gui", "-c", CONFIG_FILE])
         print("SUMO simulation started successfully!")
 
+        route = traci.simulation.findRoute(START_EDGE, END_EDGE)
+
         # Add an ambulance to the simulation
-        add_ambulance(AMBULANCE_ID, START_EDGE, END_EDGE)
+        add_ambulance(AMBULANCE_ID, route, START_EDGE, END_EDGE)
 
         # Track the ambulance until it reaches its destination
         track_ambulance(AMBULANCE_ID, END_EDGE)
