@@ -3,7 +3,7 @@ from ambulance_simulation import add_ambulance, track_ambulance, end_simulation
 
 CONFIG_FILE = "../sumo_simulations/city_block/osm.sumocfg"
 START_EDGE = "1128395118"  
-END_EDGE = "1001085502"    
+END_EDGE = "200574632"    
 AMBULANCE_ID = "ambulance_1"
 
 def main():
