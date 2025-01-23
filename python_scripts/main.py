@@ -1,7 +1,6 @@
 import traci
-import networkx as nx
 from ambulance_simulation import add_ambulance, track_ambulance, end_simulation
-from graph_utils import extract_graph, get_edge_path
+from algorithms import djikstra
 
 CONFIG_FILE = "../sumo_simulations/small_block/osm.sumocfg"
 NETWORK_FILE = "../sumo_simulations/small_block/osm.net.xml.gz"
@@ -12,17 +11,7 @@ AMBULANCE_ID = "ambulance_1"
 def main():
     """Main entry point for the simulation."""
     try:
-        # Extract the graph from the network file
-        graph = extract_graph(NETWORK_FILE)
-            
-        # Compute the shortest path using Dijkstra's algorithm
-        node_path = nx.dijkstra_path(graph, START_NODE, END_NODE)
-
-        # Convert the node path to an edge path    
-        edge_path = get_edge_path(graph, node_path)
-
-        if len(edge_path) == 0:
-            raise ValueError("No valid path found between the start and end nodes.")
+        edge_path = djikstra(NETWORK_FILE, START_NODE, END_NODE)
 
         start_edge = edge_path[0]
         end_edge = edge_path[-1]
