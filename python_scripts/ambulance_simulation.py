@@ -2,17 +2,15 @@ import traci
 
 def add_ambulance(vehicle_id, route, start_edge, end_edge):
     """Adds an ambulance to the simulation with a computed route."""
-    # Use findRoute to calculate the route between start_edge and end_edge
-    
     # Ensure the route contains valid edges
-    if route.edges:
+    try:
         # Add the ambulance to the simulation
         traci.vehicle.add(vehicle_id, routeID="", typeID="veh_emergency")
         # Set the computed route for the ambulance
-        traci.vehicle.setRoute(vehicle_id, route.edges)
+        traci.vehicle.setRoute(vehicle_id, route)
         print(f"Ambulance {vehicle_id} added with route from {start_edge} to {end_edge}.")
-    else:
-        print(f"No valid route found between {start_edge} and {end_edge}.")
+    except traci.exceptions.TraCIException as e:
+        print(f"No valid route found between {start_edge} and {end_edge}.", e)
 
 def track_ambulance(vehicle_id, end_edge):
     """Tracks the ambulance's progress and terminates the simulation when it reaches the destination."""
