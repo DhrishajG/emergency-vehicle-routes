@@ -1,10 +1,16 @@
 import sumolib
 import networkx as nx
+import matplotlib.pyplot as plt
 
 def extract_graph(network_file):
     graph = nx.MultiDiGraph()
     net = sumolib.net.readNet(network_file)
 
+    pos = {}
+    for node in net.getNodes():
+        pos[node.getID()] = (node.getCoord()[0], node.getCoord()[1])
+
+    edge_labels = {}
     for edge in net.getEdges():
         # Exclude footpaths and other non-vehicle edges
         if edge.allows("passenger"):
@@ -14,7 +20,11 @@ def extract_graph(network_file):
             weight = edge.getLength() / edge.getSpeed()
         
             graph.add_edge(from_node, to_node, key=edge_id, weight=weight)
+            edge_labels[(from_node, to_node)] = f"{weight:.2f}"
 
+    nx.draw(graph, pos, with_labels=False, node_size=50)
+    nx.draw_networkx_edge_labels(graph, pos, edge_labels=edge_labels, font_size=8)
+    plt.show()
     return graph
 
 def get_edge_path(graph, node_path):
