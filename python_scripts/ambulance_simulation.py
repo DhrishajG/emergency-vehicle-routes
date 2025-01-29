@@ -1,6 +1,6 @@
 import traci
 
-def add_ambulance(vehicle_id, route, start_edge, end_edge):
+def add_ambulance(vehicle_id, route, start_node, end_node):
     """Adds an ambulance to the simulation with a computed route."""
     # Ensure the route contains valid edges
     try:
@@ -8,20 +8,29 @@ def add_ambulance(vehicle_id, route, start_edge, end_edge):
         traci.vehicle.add(vehicle_id, routeID="", typeID="veh_emergency")
         # Set the computed route for the ambulance
         traci.vehicle.setRoute(vehicle_id, route)
-        print(f"Ambulance {vehicle_id} added with route from {start_edge} to {end_edge}.")
+        print(f"Ambulance {vehicle_id} added with route from {start_node} to {end_node}.")
     except traci.exceptions.TraCIException as e:
-        print(f"No valid route found between {start_edge} and {end_edge}.", e)
+        print(f"No valid route found between {start_node} and {end_node}.", e)
 
-def track_ambulance(vehicle_id, end_edge):
+def track_ambulance(vehicle_id, end_edge, to_position):
     """Tracks the ambulance's progress and terminates the simulation when it reaches the destination."""
+    reached_destination = False
     while traci.simulation.getMinExpectedNumber() > 0:
         traci.simulationStep()
-        current_edge = traci.vehicle.getRoadID(vehicle_id)
-        print(f"Ambulance is on edge: {current_edge}")
-        if current_edge == end_edge:
-            print(f"Ambulance {vehicle_id} has reached its destination!")
+        if vehicle_id in traci.vehicle.getIDList():
+            current_edge = traci.vehicle.getRoadID(vehicle_id)
+            vehicle_position = traci.vehicle.getPosition(vehicle_id)
+            print(f"Ambulance is on edge: {current_edge}, position: {vehicle_position}")
+            if current_edge == end_edge and vehicle_position == to_position:
+                print(f"Ambulance {vehicle_id} has reached the destination node!")
+                reached_destination = True
+                break
+        else:
+            print(f"Vehicle {vehicle_id} is not found in the simulation.")
             break
-    traci.close()
+    if reached_destination:
+        print("Ambulance reached the destination.")
+        traci.close()
 
 def end_simulation():
     """Ends the SUMO simulation."""

@@ -11,3 +11,9 @@ class StartEdge(Enum):
 
 class EndEdge(Enum):
     small_block = "-4794936#1"
+
+class NetworkFile(Enum):
+    small_block = "../sumo_simulations/small_block/osm.net.xml.gz"
+
+class ConfigFile(Enum):
+    small_block = "../sumo_simulations/small_block/osm.sumocfg"

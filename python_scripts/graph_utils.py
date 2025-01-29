@@ -25,7 +25,7 @@ def extract_graph(network_file):
     nx.draw(graph, pos, with_labels=False, node_size=50)
     nx.draw_networkx_edge_labels(graph, pos, edge_labels=edge_labels, font_size=8)
     plt.show()
-    return graph
+    return graph, pos
 
 def get_edge_path(graph, node_path):
     # Convert the node path to an edge path
