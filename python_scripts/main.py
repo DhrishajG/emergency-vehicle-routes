@@ -19,7 +19,7 @@ def main():
         traci.start(["sumo-gui", "-c", CONFIG_FILE])
         print("SUMO simulation started successfully!")
 
-        edge_path = a_star(NETWORK_FILE, START_NODE, END_NODE)
+        edge_path = djikstra(NETWORK_FILE, START_NODE, END_NODE)
 
         end_edge = edge_path[-1]
 
