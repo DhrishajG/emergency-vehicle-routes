@@ -26,7 +26,7 @@ def track_ambulance(vehicle_id, end_edge, to_position):
                 reached_destination = True
                 break
         else:
-            print(f"Vehicle {vehicle_id} is not found in the simulation.")
+            print(f"Vehicle {vehicle_id} is not found in the simulation. Possibly because it has reached destination")
             break
     if reached_destination:
         print("Ambulance reached the destination.")
