@@ -13,7 +13,7 @@ def extract_graph(network_file):
 
     edge_labels = {}
     for edge in net.getEdges():
-        # Exclude footpaths and other non-vehicle edges
+        # Exclude footpaths and other non-allowed edges
         if edge.allows("emergency"):
             edge_id = edge.getID()
             from_node = edge.getFromNode().getID()
@@ -25,10 +25,13 @@ def extract_graph(network_file):
 
             graph.add_edge(from_node, to_node, key=edge_id, weight=weight)
             edge_labels[(from_node, to_node)] = f"{weight:.2f}"
-
-    nx.draw(graph, pos, with_labels=False, node_size=50)
-    nx.draw_networkx_edge_labels(graph, pos, edge_labels=edge_labels, font_size=8)
-    plt.show()
+    
+    # Draw the graph representation of the road network
+    draw_graph = input("Do you want to draw the graph? (y/n): ")
+    if draw_graph.lower() == "y":
+        nx.draw(graph, pos, with_labels=False, node_size=50)
+        nx.draw_networkx_edge_labels(graph, pos, edge_labels=edge_labels, font_size=8)
+        plt.show()
     return graph, pos
 
 def get_edge_path(graph, node_path):
