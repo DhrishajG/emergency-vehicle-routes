@@ -5,9 +5,11 @@ def add_ambulance(vehicle_id, route, start_node, end_node):
     # Ensure the route contains valid edges
     try:
         # Add the ambulance to the simulation
-        traci.vehicle.add(vehicle_id, routeID="", typeID="veh_emergency")
+        traci.vehicle.add(vehicle_id, routeID="", typeID="emergency")
         # Set the computed route for the ambulance
         traci.vehicle.setRoute(vehicle_id, route)
+        # Allow the ambulance to pass through red lights
+        traci.vehicle.setSpeedMode(vehicle_id, 39)
         print(f"Ambulance {vehicle_id} added with route from {start_node} to {end_node}.")
     except traci.exceptions.TraCIException as e:
         print(f"No valid route found between {start_node} and {end_node}.", e)
