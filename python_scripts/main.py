@@ -9,8 +9,6 @@ NETWORK_FILE = NetworkFile.small_block.value
 START_NODE = StartNode.small_block.value
 END_NODE = EndNode.small_block.value
 AMBULANCE_ID = "ambulance_1"
-START_EDGE = StartEdge.small_block.value
-END_EDGE = EndEdge.small_block.value
 
 def main():
     """Main entry point for the simulation."""
