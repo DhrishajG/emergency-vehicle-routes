@@ -1,4 +1,5 @@
 import sumolib
+import traci
 import networkx as nx
 import matplotlib.pyplot as plt
 
@@ -13,12 +14,15 @@ def extract_graph(network_file):
     edge_labels = {}
     for edge in net.getEdges():
         # Exclude footpaths and other non-vehicle edges
-        if edge.allows("passenger"):
+        if edge.allows("emergency"):
             edge_id = edge.getID()
             from_node = edge.getFromNode().getID()
             to_node = edge.getToNode().getID()
             weight = edge.getLength() / edge.getSpeed()
         
+            if traci.edge.getLaneNumber(edge_id) == 1:
+                weight *= 1.3  # Narrow road penalty
+
             graph.add_edge(from_node, to_node, key=edge_id, weight=weight)
             edge_labels[(from_node, to_node)] = f"{weight:.2f}"
 
