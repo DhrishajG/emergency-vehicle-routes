@@ -1,14 +1,16 @@
-import sumolib
 import traci
 from ambulance_simulation import add_ambulance, track_ambulance, end_simulation
 from algorithms import a_star, djikstra
-from constants import ConfigFile, NetworkFile, StartNode, EndNode, StartEdge, EndEdge
+from constants import ConfigFile, NetworkFile, StartNode, EndNode, CongestionPath, AccidentEdge
+from traffic_simulations import toggle_scenario
 
-CONFIG_FILE = ConfigFile.small_block.value
-NETWORK_FILE = NetworkFile.small_block.value
-START_NODE = StartNode.small_block.value
-END_NODE = EndNode.small_block.value
+CONFIG_FILE = ConfigFile.city_block.value
+NETWORK_FILE = NetworkFile.city_block.value
+START_NODE = StartNode.city_block.value
+END_NODE = EndNode.city_block.value
 AMBULANCE_ID = "ambulance_1"
+CONGESTION_ROUTE = CongestionPath.city_block.value
+ACCIDENT_EDGE = AccidentEdge.city_block.value
 
 def main():
     """Main entry point for the simulation."""
@@ -16,6 +18,9 @@ def main():
         # Start the SUMO simulation
         traci.start(["sumo-gui", "-c", CONFIG_FILE])
         print("SUMO simulation started successfully!")
+
+        # Add random congestion to the specified edge
+        toggle_scenario('accident', enable=True, route=CONGESTION_ROUTE, accident_edge=ACCIDENT_EDGE, num_vehicles=7)
 
         edge_path = a_star(NETWORK_FILE, START_NODE, END_NODE)
 

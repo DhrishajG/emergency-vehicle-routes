@@ -21,3 +21,11 @@ class NetworkFile(Enum):
 class ConfigFile(Enum):
     small_block = "../sumo_simulations/small_block/osm.sumocfg"
     city_block = "../sumo_simulations/city_block/osm.sumocfg"
+
+class CongestionPath(Enum):
+    small_block = ["628003088#2", "648408521#0","648408521#2", "648408521#4", "648408521#6", "648408521#9", "648408521#10", "1266310080#1"]
+    city_block = ["-780336#7", "-780336#6", "-780336#5", "-780336#4", "-780336#3", "-780336#2", "-1003177677#0"]
+
+class AccidentEdge(Enum):
+    small_block = "648408521#2"
+    city_block = "-780336#5"
