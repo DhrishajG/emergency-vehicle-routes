@@ -1,16 +1,16 @@
 import traci
 from ambulance_simulation import add_ambulance, track_ambulance, end_simulation
-from algorithms import a_star, djikstra
+from algorithms import a_star, djikstra, aco_shortest_path
 from constants import ConfigFile, NetworkFile, StartNode, EndNode, CongestionPath, AccidentEdge
 from traffic_simulations import toggle_scenario
 
-CONFIG_FILE = ConfigFile.city_block.value
-NETWORK_FILE = NetworkFile.city_block.value
-START_NODE = StartNode.city_block.value
-END_NODE = EndNode.city_block.value
+CONFIG_FILE = ConfigFile.small_block.value
+NETWORK_FILE = NetworkFile.small_block.value
+START_NODE = StartNode.small_block.value
+END_NODE = EndNode.small_block.value
 AMBULANCE_ID = "ambulance_1"
-CONGESTION_ROUTE = CongestionPath.city_block.value
-ACCIDENT_EDGE = AccidentEdge.city_block.value
+CONGESTION_ROUTE = CongestionPath.small_block.value
+ACCIDENT_EDGE = AccidentEdge.small_block.value
 
 def main():
     """Main entry point for the simulation."""
@@ -20,9 +20,9 @@ def main():
         print("SUMO simulation started successfully!")
 
         # Add random congestion to the specified edge
-        toggle_scenario('accident', enable=True, route=CONGESTION_ROUTE, accident_edge=ACCIDENT_EDGE, num_vehicles=7)
+        toggle_scenario('accident', enable=False, route=CONGESTION_ROUTE, accident_edge=ACCIDENT_EDGE, num_vehicles=7)
 
-        edge_path = a_star(NETWORK_FILE, START_NODE, END_NODE)
+        edge_path = aco_shortest_path(NETWORK_FILE, START_NODE, END_NODE)
 
         end_edge = edge_path[-1]
 

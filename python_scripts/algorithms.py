@@ -1,6 +1,8 @@
 import math
 import networkx as nx
 import traci
+from aco import AntColonyOptimization
+from aco_routing import ACO
 from graph_utils import extract_graph, get_edge_path
 
 def euclidean_distance(node1, node2, pos):
@@ -93,5 +95,18 @@ def djikstra(network_file, start_node, end_node):
     edge_path = get_edge_path(graph, node_path)
 
     print(f"Computed edge path: {edge_path}")
+
+    return edge_path
+
+def aco_shortest_path(network_file, start_node, end_node):
+    # Extract the graph from the network file
+    graph, _ = extract_graph(network_file)
+
+    # Find the best path using ACO
+    aco = AntColonyOptimization(graph, num_ants=50, num_iterations=100)
+    aco_path, aco_length = aco.optimize(start_node, end_node)
+    print(f"Best path: {aco_path}, Cost: {aco_length}")
+
+    edge_path = get_edge_path(graph, aco_path)
 
     return edge_path
