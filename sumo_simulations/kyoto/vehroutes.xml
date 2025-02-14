@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-02-12 16:56:00 by Eclipse SUMO sumo Version v1_21_0+1021-4606c0d7274
+<sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="/Users/dhrishajgarg/sumo/tools/2025-02-12-16-55-41/osm.net.xml.gz"/>
+        <route-files value="/Users/dhrishajgarg/sumo/tools/2025-02-12-16-55-41/trips.trips.xml"/>
+        <additional-files value="/Users/dhrishajgarg/sumo/tools/2025-02-12-16-55-41/osm_stops.add.xml"/>
+    </input>
+
+    <output>
+        <vehroute-output value="/Users/dhrishajgarg/sumo/tools/2025-02-12-16-55-41/vehroutes.xml"/>
+        <stop-output value="/Users/dhrishajgarg/sumo/tools/2025-02-12-16-55-41/stopinfos.xml"/>
+    </output>
+
+    <time>
+        <begin value="0.0"/>
+    </time>
+
+    <processing>
+        <ignore-route-errors value="true"/>
+    </processing>
+
+    <routing>
+        <device.rerouting.adaptation-interval value="0"/>
+    </routing>
+
+    <report>
+        <aggregate-warnings value="5"/>
+        <error-log value="/Users/dhrishajgarg/sumo/tools/2025-02-12-16-55-41/trips.trips.xml.errorlog"/>
+        <no-step-log value="true"/>
+    </report>
+
+</sumoConfiguration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vehicle id="2_train_K+B:0" type="pt_train" depart="17.00" departLane="0" arrival="259.00">
+        <route edges="833545105 833544793"/>
+        <stop busStop="7781214903" duration="30.00"/>
+        <stop busStop="7781211828" duration="30.00"/>
+    </vehicle>
+
+    <vehicle id="3_train_B+K:0" type="pt_train" depart="52.00" departLane="0" arrival="289.00">
+        <route edges="30662077 30662093#1"/>
+        <stop busStop="339087268" duration="30.00"/>
+        <stop busStop="339087047" duration="30.00"/>
+    </vehicle>
+
+    <vehicle id="7_train_京阪本線・鴨東線:0" type="pt_train" depart="133.00" departLane="0" arrival="315.00">
+        <route edges="734990385 844434271 734990379"/>
+        <stop busStop="6883622246" duration="30.00"/>
+    </vehicle>
+
+    <vehicle id="6_train_KH:0" type="pt_train" depart="132.00" departLane="0" arrival="318.00">
+        <route edges="30662340 844434270 30430485"/>
+        <stop busStop="335826528" duration="30.00"/>
+    </vehicle>
+
+    <vehicle id="4_train_HK:0" type="pt_train" depart="119.00" departLane="0" arrival="341.00">
+        <route edges="30415674 30415728#1 741839575"/>
+        <stop busStop="335667743" duration="30.00"/>
+        <stop busStop="7795996210" duration="30.00"/>
+    </vehicle>
+
+    <vehicle id="1_train_OT:1" type="pt_train" depart="15.00" departLane="0" arrival="476.00">
+        <route edges="1178632943 1178632938#1 1178632938#2"/>
+        <stop busStop="10949479984" duration="30.00"/>
+        <stop busStop="10949479955" duration="30.00"/>
+        <stop busStop="10949479931" duration="30.00"/>
+        <stop busStop="10949479923" duration="30.00"/>
+    </vehicle>
+
+    <vehicle id="0_train_OT:0" type="pt_train" depart="15.00" departLane="0" arrival="478.00">
+        <route edges="30661903 1178632946#1 1178632946#2"/>
+        <stop busStop="339086117" duration="30.00"/>
+        <stop busStop="339086095" duration="30.00"/>
+        <stop busStop="339086207" duration="30.00"/>
+        <stop busStop="5219651004" duration="30.00"/>
+    </vehicle>
+
+    <vehicle id="9_train_KH:2" type="pt_train" depart="315.00" departLane="0" arrival="497.00">
+        <route edges="734990385 844434271 734990379"/>
+        <stop busStop="6883622246" duration="30.00"/>
+    </vehicle>
+
+    <vehicle id="8_train_KH:1" type="pt_train" depart="318.00" departLane="0" arrival="504.00">
+        <route edges="30662340 844434270 30430485"/>
+        <stop busStop="335826528" duration="30.00"/>
+    </vehicle>
+
+    <vehicle id="14_subway_K:0" type="pt_subway" depart="389.00" departLane="0" arrival="530.00">
+        <route edges="833545105 833544793"/>
+        <stop busStop="7781214903" duration="30.00"/>
+        <stop busStop="7781211828" duration="30.00"/>
+    </vehicle>
+
+    <vehicle id="13_bus_100:0" type="pt_bus" depart="383.00" departLane="0" arrival="553.00">
+        <route edges="58413931#0 58413931#1 557248345#0 557248345#1 557248345#3 557248345#4 854442455#2 854442455#4 550582598#1 550582598#4 550582598#5 550582598#8 550582598#9 550582598#10 28402285#1 28402285#2 273276548#7 273276548#8"/>
+        <stop busStop="2785051569" duration="30.00"/>
+    </vehicle>
+
+    <vehicle id="5_train_HK:1" type="pt_train" depart="341.00" departLane="0" arrival="571.00">
+        <route edges="-881920709 -741839576#1 -741839576#0 741839582 741839581#1"/>
+        <stop busStop="-7795996210" duration="30.00"/>
+        <stop busStop="6944607673" duration="30.00"/>
+    </vehicle>
+
+    <vehicle id="16_subway_K:1" type="pt_subway" depart="441.00" departLane="0" arrival="577.00">
+        <route edges="30662077 30662093#1"/>
+        <stop busStop="339087268" duration="30.00"/>
+        <stop busStop="339087047" duration="30.00"/>
+    </vehicle>
+
+    <vehicle id="15_subway_T:0" type="pt_subway" depart="478.00" departLane="0" arrival="748.00">
+        <route edges="30661903 1178632946#1 1178632946#2"/>
+        <stop busStop="339086117" duration="30.00"/>
+        <stop busStop="339086095" duration="30.00"/>
+        <stop busStop="339086207" duration="30.00"/>
+        <stop busStop="5219651004" duration="30.00"/>
+    </vehicle>
+
+    <vehicle id="17_subway_T:1" type="pt_subway" depart="535.00" departLane="0" arrival="803.00">
+        <route edges="1178632943 1178632938#1 1178632938#2"/>
+        <stop busStop="10949479984" duration="30.00"/>
+        <stop busStop="10949479955" duration="30.00"/>
+        <stop busStop="10949479931" duration="30.00"/>
+        <stop busStop="10949479923" duration="30.00"/>
+    </vehicle>
+
+</routes>

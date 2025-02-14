@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-02-12 17:18:59 by Eclipse SUMO netconvert Version v1_21_0+1021-4606c0d7274
+<netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <type-files value="${SUMO_HOME}/data/typemap/osmNetconvert.typ.xml,${SUMO_HOME}/data/typemap/osmNetconvertAerialway.typ.xml"/>
+        <osm-files value="osm_bbox.osm.xml.gz"/>
+    </input>
+
+    <output>
+        <output-file value="osm.net.xml.gz"/>
+        <output.street-names value="true"/>
+        <output.original-names value="true"/>
+        <ptstop-output value="osm_stops.add.xml"/>
+        <ptline-output value="osm_ptlines.xml"/>
+    </output>
+
+    <projection>
+        <proj.utm value="true"/>
+    </projection>
+
+    <processing>
+        <geometry.remove value="true"/>
+        <roundabouts.guess value="true"/>
+    </processing>
+
+    <tls_building>
+        <tls.discard-simple value="true"/>
+        <tls.join value="true"/>
+        <tls.guess-signals value="true"/>
+        <tls.default-type value="actuated"/>
+    </tls_building>
+
+    <ramp_guessing>
+        <ramps.guess value="true"/>
+    </ramp_guessing>
+
+    <junctions>
+        <junctions.join value="true"/>
+        <junctions.corner-detail value="5"/>
+    </junctions>
+
+    <railway>
+        <railway.topology.repair value="true"/>
+    </railway>
+
+</netconvertConfiguration>
+-->
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <busStop id="-10028415192" name="South Temple @ 400 East" lane="-172946090#1_0" startPos="22.50" endPos="37.50" friendlyPos="true" lines="1"/>
+    <busStop id="-10028415194" name="South Temple @ 300 East" lane="-172946090#6_0" startPos="1.46" endPos="16.46" friendlyPos="true" lines="1"/>
+    <busStop id="-1584802892" name="Library" lane="-145012014#19_0" startPos="0.00" endPos="200.00" friendlyPos="true">
+        <access lane="475092534#3_0" pos="0.20" length="24.01" friendlyPos="1"/>
+        <access lane="475092534#4_0" pos="0.00" length="23.76" friendlyPos="1"/>
+        <access lane="829867668#0_0" pos="12.12" length="17.32" friendlyPos="1"/>
+        <access lane="829867668#1_0" pos="0.00" length="21.45" friendlyPos="1"/>
+        <access lane="912161808_0" pos="12.74" length="6.98" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-1584813022" name="Library" lane="-1025530504#7_0" startPos="2.46" endPos="202.46" friendlyPos="true">
+        <access lane="10143700#1_0" pos="0.20" length="36.41" friendlyPos="1"/>
+        <access lane="1025533366#0_0" pos="56.35" length="16.44" friendlyPos="1"/>
+        <access lane="127836958#2_0" pos="21.64" length="22.37" friendlyPos="1"/>
+        <access lane="705003530#3_0" pos="39.50" length="32.19" friendlyPos="1"/>
+        <access lane="829867667#3_0" pos="11.74" length="25.82" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-5919129373" name="Courthouse" lane="-348043138#1_0" startPos="0.00" endPos="109.71" friendlyPos="true">
+        <access lane="143640430#4_0" pos="13.13" length="18.07" friendlyPos="1"/>
+        <access lane="684494787#2_0" pos="16.10" length="8.87" friendlyPos="1"/>
+        <access lane="704609986#2_0" pos="16.10" length="21.47" friendlyPos="1"/>
+        <access lane="705004512#4_0" pos="0.00" length="24.74" friendlyPos="1"/>
+        <access lane="911971321#0_0" pos="95.82" length="8.26" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-6459176502" name="Business Services Building" lane="-589711307#3_0" startPos="2.98" endPos="17.98" friendlyPos="true" lines="Brown"/>
+    <busStop id="10025938971" name="200 South @ 300 West" lane="1328972691#0_0" startPos="0.00" endPos="7.25" friendlyPos="true"/>
+    <busStop id="10025938972" name="200 South @ 300 West" lane="1328972689_0" startPos="0.00" endPos="15.00" friendlyPos="true"/>
+    <busStop id="10025938973" name="200 South @ 200 West" lane="1328972698_0" startPos="2.67" endPos="17.67" friendlyPos="true"/>
+    <busStop id="10025938974" name="200 South @ West Temple" lane="935202151_0" startPos="3.21" endPos="18.21" friendlyPos="true"/>
+    <busStop id="10025938975" name="200 South @ West Temple" lane="1323740980#1_0" startPos="0.00" endPos="12.94" friendlyPos="true"/>
+    <busStop id="10025938976" name="200 South @ Main Street" lane="1323740968_0" startPos="6.72" endPos="21.72" friendlyPos="true"/>
+    <busStop id="10025938977" name="200 South @ Main Street" lane="1323740969#1_0" startPos="3.30" endPos="18.30" friendlyPos="true"/>
+    <busStop id="10025938978" name="200 South @ State Street" lane="346397910#1_0" startPos="5.64" endPos="20.64" friendlyPos="true"/>
+    <busStop id="10025938979" name="200 South @ State Street" lane="346397910#1_0" startPos="27.93" endPos="42.93" friendlyPos="true"/>
+    <busStop id="10025938980" name="200 South @ 300 East" lane="1300633426_0" startPos="0.00" endPos="12.96" friendlyPos="true"/>
+    <busStop id="10025938981" name="200 South @ 300 East" lane="1300633424#1_0" startPos="0.00" endPos="15.00" friendlyPos="true"/>
+    <busStop id="10025938982" name="200 South @ 400 East" lane="1060099609#1_0" startPos="0.00" endPos="15.00" friendlyPos="true"/>
+    <busStop id="10025938983" name="200 South @ 400 East" lane="1294636485#0_0" startPos="0.00" endPos="5.44" friendlyPos="true"/>
+    <busStop id="10025938984" name="200 South @ 500 East" lane="1060099608_0" startPos="0.00" endPos="15.00" friendlyPos="true"/>
+    <busStop id="10025938985" name="200 South @ 500 East" lane="1060099608_0" startPos="6.33" endPos="21.33" friendlyPos="true"/>
+    <busStop id="10025938986" name="200 South @ 600 East" lane="1060102924#0_0" startPos="3.58" endPos="18.58" friendlyPos="true"/>
+    <busStop id="10025938987" name="200 South @ 600 East" lane="1060102922#0_0" startPos="4.72" endPos="19.72" friendlyPos="true"/>
+    <busStop id="10028415187" name="South Temple @ A Street" lane="169783428#2_0" startPos="0.00" endPos="15.00" friendlyPos="true"/>
+    <busStop id="10028415188" name="200 East @ South Temple" lane="1190539540#1_0" startPos="22.01" endPos="37.01" friendlyPos="true"/>
+    <busStop id="10028415190" name="200 East @ South Temple" lane="1190539540#1_0" startPos="4.40" endPos="19.40" friendlyPos="true"/>
+    <busStop id="10028415193" name="South Temple @ C Street" lane="172946090#2_0" startPos="23.96" endPos="38.96" friendlyPos="true"/>
+    <busStop id="10028415195" name="South Temple @ F Street" lane="416766505#0_0" startPos="26.86" endPos="41.86" friendlyPos="true" lines="1"/>
+    <busStop id="10028415196" name="South Temple @ 500 East" lane="416766505#0_0" startPos="13.35" endPos="28.35" friendlyPos="true"/>
+    <busStop id="10028472680" name="200 East @ 150 South" lane="684690206#1_0" startPos="0.00" endPos="8.94" friendlyPos="true"/>
+    <busStop id="10028472682" name="200 East @ 150 South" lane="684690206#3_0" startPos="11.81" endPos="26.81" friendlyPos="true"/>
+    <busStop id="10030650792" name="West Temple @ 150 South" lane="659479035#4_0" startPos="0.00" endPos="3.52" friendlyPos="true"/>
+    <busStop id="11377911970" name="Courthouse Station (WB)" lane="1226971376#1_0" startPos="10.46" endPos="25.46" friendlyPos="true"/>
+    <busStop id="1226595410" name="Gallivan Plaza" lane="106345198#6_0" startPos="0.00" endPos="108.91" friendlyPos="true" lines="701 704">
+        <access lane="1216304886_0" pos="0.00" length="19.36" friendlyPos="1"/>
+        <access lane="290431842#2_0" pos="96.27" length="6.22" friendlyPos="1"/>
+        <access lane="453687457#3_0" pos="12.88" length="15.41" friendlyPos="1"/>
+        <access lane="708573887#8_0" pos="12.46" length="19.20" friendlyPos="1"/>
+        <access lane="708573892#1_0" pos="0.20" length="23.10" friendlyPos="1"/>
+    </busStop>
+    <busStop id="1226596243" name="City Center" lane="106345198#17_0" startPos="0.00" endPos="108.32" friendlyPos="true" lines="701 704">
+        <access lane="287312367#1_0" pos="95.87" length="7.14" friendlyPos="1"/>
+        <access lane="420055761#2_0" pos="1.12" length="14.55" friendlyPos="1"/>
+        <access lane="425370854_0" pos="22.86" length="14.36" friendlyPos="1"/>
+        <access lane="555314796#5_0" pos="14.31" length="16.42" friendlyPos="1"/>
+        <access lane="911971317#0_0" pos="93.79" length="7.96" friendlyPos="1"/>
+    </busStop>
+    <busStop id="1226596499" name="Arena" lane="106345198#36_0" startPos="0.00" endPos="113.82" friendlyPos="true" lines="701 704">
+        <access lane="1219092705#0_0" pos="13.18" length="23.89" friendlyPos="1"/>
+        <access lane="546230179#1_0" pos="102.69" length="5.00" friendlyPos="1"/>
+        <access lane="759243536#3_0" pos="0.61" length="24.33" friendlyPos="1"/>
+        <access lane="759243536#4_0" pos="0.00" length="24.15" friendlyPos="1"/>
+        <access lane="911971315#0_0" pos="100.69" length="9.11" friendlyPos="1"/>
+    </busStop>
+    <busStop id="1584802892" name="Library" lane="145012014#19_0" startPos="2.17" endPos="202.17" friendlyPos="true" lines="703">
+        <access lane="475092534#3_0" pos="0.20" length="24.01" friendlyPos="1"/>
+        <access lane="475092534#4_0" pos="0.00" length="23.76" friendlyPos="1"/>
+        <access lane="829867668#0_0" pos="12.12" length="17.32" friendlyPos="1"/>
+        <access lane="829867668#1_0" pos="0.00" length="21.45" friendlyPos="1"/>
+        <access lane="912161808_0" pos="12.74" length="6.98" friendlyPos="1"/>
+    </busStop>
+    <busStop id="1584802910" name="Trolley" lane="145012014#3_0" startPos="0.00" endPos="199.52" friendlyPos="true" lines="703">
+        <access lane="143652155#6_0" pos="10.98" length="13.80" friendlyPos="1"/>
+        <access lane="145012683#1_0" pos="0.04" length="23.55" friendlyPos="1"/>
+        <access lane="699783284#0_0" pos="34.80" length="22.74" friendlyPos="1"/>
+        <access lane="832609616#1_0" pos="4.89" length="23.78" friendlyPos="1"/>
+        <access lane="832609616#2_0" pos="13.42" length="20.61" friendlyPos="1"/>
+    </busStop>
+    <busStop id="1584813022" name="Library" lane="1025530504#7_0" startPos="0.00" endPos="200.00" friendlyPos="true" lines="703">
+        <access lane="10143700#1_0" pos="0.20" length="36.41" friendlyPos="1"/>
+        <access lane="1025533366#0_0" pos="56.35" length="16.44" friendlyPos="1"/>
+        <access lane="127836958#2_0" pos="21.64" length="22.37" friendlyPos="1"/>
+        <access lane="705003530#3_0" pos="39.50" length="32.19" friendlyPos="1"/>
+        <access lane="829867667#3_0" pos="11.74" length="25.82" friendlyPos="1"/>
+    </busStop>
+    <busStop id="1584813024" name="Trolley" lane="145012015#10_0" startPos="0.00" endPos="196.88" friendlyPos="true" lines="703">
+        <access lane="143652155#3_0" pos="20.15" length="25.05" friendlyPos="1"/>
+        <access lane="620676019#2_0" pos="46.51" length="17.95" friendlyPos="1"/>
+        <access lane="620676019#3_0" pos="0.00" length="21.13" friendlyPos="1"/>
+        <access lane="704612188#1_0" pos="46.50" length="22.81" friendlyPos="1"/>
+        <access lane="704612188#2_0" pos="0.00" length="25.51" friendlyPos="1"/>
+    </busStop>
+    <busStop id="1651793676" name="West Temple @ South Temple" lane="152356342#0_0" startPos="0.00" endPos="15.00" friendlyPos="true"/>
+    <busStop id="5919129373" name="Courthouse" lane="348043138#1_0" startPos="0.00" endPos="109.71" friendlyPos="true">
+        <access lane="143640430#4_0" pos="13.13" length="18.07" friendlyPos="1"/>
+        <access lane="684494787#2_0" pos="16.10" length="8.87" friendlyPos="1"/>
+        <access lane="704609986#2_0" pos="16.10" length="21.47" friendlyPos="1"/>
+        <access lane="705004512#4_0" pos="0.00" length="24.74" friendlyPos="1"/>
+        <access lane="911971321#0_0" pos="95.82" length="8.26" friendlyPos="1"/>
+    </busStop>
+    <busStop id="5919129374" name="Courthouse" lane="254604695#1_0" startPos="0.00" endPos="109.79" friendlyPos="true" lines="703 704 701">
+        <access lane="143640430#4_0" pos="95.40" length="6.59" friendlyPos="1"/>
+        <access lane="483494225#1_0" pos="12.32" length="19.58" friendlyPos="1"/>
+        <access lane="684494787#1_0" pos="15.44" length="19.41" friendlyPos="1"/>
+        <access lane="880823154#4_0" pos="0.00" length="24.70" friendlyPos="1"/>
+        <access lane="911971321#0_0" pos="13.84" length="7.22" friendlyPos="1"/>
+    </busStop>
+    <busStop id="5919129375" name="Gallivan Plaza" lane="283890171#6_0" startPos="0.00" endPos="108.75" friendlyPos="true">
+        <access lane="1216304887_0" pos="0.59" length="18.76" friendlyPos="1"/>
+        <access lane="1316178676_0" pos="11.73" length="15.29" friendlyPos="1"/>
+        <access lane="290431842#2_0" pos="12.54" length="19.61" friendlyPos="1"/>
+        <access lane="453687457#3_0" pos="96.69" length="3.23" friendlyPos="1"/>
+        <access lane="832272477#4_0" pos="0.00" length="21.98" friendlyPos="1"/>
+    </busStop>
+    <busStop id="5919129378" name="City Center" lane="283890171#17_0" startPos="0.00" endPos="108.17" friendlyPos="true">
+        <access lane="1130958679#0_0" pos="0.00" length="19.04" friendlyPos="1"/>
+        <access lane="1130958680#1_0" pos="0.20" length="19.32" friendlyPos="1"/>
+        <access lane="420055570#8_0" pos="66.45" length="14.13" friendlyPos="1"/>
+        <access lane="555314796#5_0" pos="98.17" length="4.90" friendlyPos="1"/>
+        <access lane="911971317#0_0" pos="10.22" length="7.91" friendlyPos="1"/>
+    </busStop>
+    <busStop id="5919129379" name="Temple Square" lane="283890171#26_0" startPos="0.00" endPos="108.11" friendlyPos="true">
+        <access lane="143640440#1_0" pos="15.56" length="18.22" friendlyPos="1"/>
+        <access lane="546230175#4_0" pos="94.60" length="8.93" friendlyPos="1"/>
+        <access lane="880823227#6_0" pos="18.75" length="19.66" friendlyPos="1"/>
+        <access lane="880823227#7_0" pos="0.00" length="22.02" friendlyPos="1"/>
+        <access lane="911971316#0_0" pos="94.72" length="8.00" friendlyPos="1"/>
+    </busStop>
+    <busStop id="5919129380" name="Temple Square" lane="106345198#26_0" startPos="0.00" endPos="108.39" friendlyPos="true" lines="701 704">
+        <access lane="143640440#1_0" pos="97.09" length="4.80" friendlyPos="1"/>
+        <access lane="254605271#0_0" pos="0.20" length="24.04" friendlyPos="1"/>
+        <access lane="254605271#2_0" pos="0.00" length="24.14" friendlyPos="1"/>
+        <access lane="546230175#4_0" pos="13.06" length="22.29" friendlyPos="1"/>
+        <access lane="911971316#0_0" pos="13.35" length="7.52" friendlyPos="1"/>
+    </busStop>
+    <busStop id="5919129381" name="Arena" lane="283890171#36_0" startPos="0.00" endPos="113.96" friendlyPos="true">
+        <access lane="1219092705#0_0" pos="98.94" length="7.23" friendlyPos="1"/>
+        <access lane="546230179#1_0" pos="16.99" length="22.55" friendlyPos="1"/>
+        <access lane="759243526#2_0" pos="34.88" length="19.01" friendlyPos="1"/>
+        <access lane="759243534#1_0" pos="0.20" length="26.32" friendlyPos="1"/>
+        <access lane="911971315#0_0" pos="15.07" length="9.16" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6412715784" name="State St / 400 S (SB)" lane="684465037#1_0" startPos="36.05" endPos="51.05" friendlyPos="true"/>
+    <busStop id="6412965098" name="State St / 400 S (NB)" lane="346397921#1_0" startPos="18.50" endPos="33.50" friendlyPos="true"/>
+</additional>

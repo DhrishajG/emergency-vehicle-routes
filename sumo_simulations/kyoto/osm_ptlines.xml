@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-02-12 16:55:54 by Eclipse SUMO netconvert Version v1_21_0+1021-4606c0d7274
+<netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <type-files value="${SUMO_HOME}/data/typemap/osmNetconvert.typ.xml,${SUMO_HOME}/data/typemap/osmNetconvertAerialway.typ.xml"/>
+        <osm-files value="osm_bbox.osm.xml.gz"/>
+    </input>
+
+    <output>
+        <output-file value="osm.net.xml.gz"/>
+        <output.street-names value="true"/>
+        <output.original-names value="true"/>
+        <ptstop-output value="osm_stops.add.xml"/>
+        <ptline-output value="osm_ptlines.xml"/>
+    </output>
+
+    <projection>
+        <proj.utm value="true"/>
+    </projection>
+
+    <processing>
+        <geometry.remove value="true"/>
+        <roundabouts.guess value="true"/>
+        <lefthand value="true"/>
+    </processing>
+
+    <tls_building>
+        <tls.discard-simple value="true"/>
+        <tls.join value="true"/>
+        <tls.guess-signals value="true"/>
+        <tls.default-type value="actuated"/>
+    </tls_building>
+
+    <ramp_guessing>
+        <ramps.guess value="true"/>
+    </ramp_guessing>
+
+    <junctions>
+        <junctions.join value="true"/>
+        <junctions.corner-detail value="5"/>
+    </junctions>
+
+    <railway>
+        <railway.topology.repair value="true"/>
+    </railway>
+
+</netconvertConfiguration>
+-->
+
+<ptLines xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/ptlines_file.xsd">
+    <ptLine id="10238008" name="京阪電気鉄道京津線（太秦天神川方面）" line="OT" type="train" vClass="rail" color="170,206,36" completeness="0.25" missingBefore="8" missingAfter="4">
+        <route edges="30661903 1178632946#1 1178632946#2"/>
+        <busStop id="339086117" name="東山"/>
+        <busStop id="339086095" name="三条京阪"/>
+        <busStop id="339086207" name="京都市役所前"/>
+        <busStop id="5219651004" name="烏丸御池"/>
+    </ptLine>
+    <ptLine id="10238009" name="京阪電気鉄道京津線（びわ湖浜大津方面）" line="OT" type="train" vClass="rail" color="170,206,36" completeness="0.25" missingBefore="4" missingAfter="8">
+        <route edges="1178632943 1178632938#1 1178632938#2"/>
+        <busStop id="10949479984" name="烏丸御池"/>
+        <busStop id="10949479955" name="京都市役所前"/>
+        <busStop id="10949479931" name="三条京阪"/>
+        <busStop id="10949479923" name="東山"/>
+    </ptLine>
+    <ptLine id="10238281" name="京都地下鉄烏丸線・近鉄京都線 (国際会館 =&gt;新田辺)" line="K;B" type="train" vClass="rail" color="231,166,26" completeness="0.08" missingBefore="6" missingAfter="18">
+        <route edges="833545105 833544793"/>
+        <busStop id="7781214903" name="丸太町"/>
+        <busStop id="7781211828" name="烏丸御池"/>
+    </ptLine>
+    <ptLine id="10241506" name="近鉄京都線・京都地下鉄烏丸線 (新田辺 =&gt; 国際会館)" line="B;K" type="train" vClass="rail" color="231,166,26" completeness="0.08" missingBefore="18" missingAfter="6">
+        <route edges="30662077 30662093#1"/>
+        <busStop id="339087268" name="烏丸御池"/>
+        <busStop id="339087047" name="丸太町"/>
+    </ptLine>
+    <ptLine id="10255877" name="阪急電鉄京都線" line="HK" type="train" vClass="rail" color="49,183,129" completeness="0.07" missingBefore="26">
+        <route edges="30415674 30415728#1 741839575"/>
+        <busStop id="335667743" name="烏丸"/>
+        <busStop id="7795996210" name="京都河原町"/>
+    </ptLine>
+    <ptLine id="10255878" name="阪急電鉄京都線" line="HK" type="train" vClass="rail" color="49,183,129" completeness="0.07" missingAfter="26">
+        <route edges="-881920709 -741839576#1 -741839576#0 741839582 741839581#1"/>
+        <busStop id="-7795996210" name="京都河原町"/>
+        <busStop id="6944607673" name="烏丸"/>
+    </ptLine>
+    <ptLine id="11581194" name="京阪本線・鴨東線" line="KH" type="train" vClass="rail" completeness="0.02" missingBefore="2" missingAfter="39">
+        <route edges="30662340 844434270 30430485"/>
+        <busStop id="335826528" name="三条"/>
+    </ptLine>
+    <ptLine id="11674742" name="京阪本線・鴨東線" line="京阪本線・鴨東線" type="train" vClass="rail" completeness="0.02" missingBefore="39" missingAfter="2">
+        <route edges="734990385 844434271 734990379"/>
+        <busStop id="6883622246" name="三条"/>
+    </ptLine>
+    <ptLine id="11984507" name="京阪電気鉄道京阪本線・鴨東線" line="KH" type="train" vClass="rail" color="91,160,148" completeness="0.02" missingBefore="2" missingAfter="39">
+        <route edges="30662340 844434270 30430485"/>
+        <busStop id="335826528" name="三条"/>
+    </ptLine>
+    <ptLine id="11984508" name="京阪電気鉄道京阪本線・鴨東線" line="KH" type="train" vClass="rail" color="91,160,148" completeness="0.02" missingBefore="39" missingAfter="2">
+        <route edges="734990385 844434271 734990379"/>
+        <busStop id="6883622246" name="三条"/>
+    </ptLine>
+    <ptLine id="13150508" line="51" type="bus" vClass="bus" completeness="0.00" missingAfter="21"/>
+    <ptLine id="13150509" line="51" type="bus" vClass="bus" completeness="0.00" missingBefore="23"/>
+    <ptLine id="13665022" name="51系統　比叡山頂発" line="51" type="bus" vClass="bus" completeness="0.00" missingBefore="21" missingAfter="8"/>
+    <ptLine id="3646364" name="洛バス100号系統" line="100" type="bus" vClass="bus" completeness="0.09" missingBefore="3" missingAfter="7">
+        <route edges="58413931#0 58413931#1 557248345#0 557248345#1 557248345#3 557248345#4 854442455#2 854442455#4 550582598#1 550582598#4 550582598#5 550582598#8 550582598#9 550582598#10 28402285#1 28402285#2 28402285#5 190883135#2 273276535#0 273276535#1 273276548#3 273276548#4 273276548#7 273276548#8"/>
+        <busStop id="2785051569" name="祇園"/>
+    </ptLine>
+    <ptLine id="536800" name="京都市営地下鉄烏丸線 : :国際会館→竹田" line="K" type="subway" vClass="subway" color="60,179,113" completeness="0.13" missingBefore="6" missingAfter="7">
+        <route edges="833545105 833544793"/>
+        <busStop id="7781214903" name="丸太町"/>
+        <busStop id="7781211828" name="烏丸御池"/>
+    </ptLine>
+    <ptLine id="536803" name="京都市営地下鉄東西線 : 六地蔵→太秦天神川" line="T" type="subway" vClass="subway" color="255,69,0" completeness="0.24" missingBefore="9" missingAfter="4">
+        <route edges="30661903 1178632946#1 1178632946#2"/>
+        <busStop id="339086117" name="東山"/>
+        <busStop id="339086095" name="三条京阪"/>
+        <busStop id="339086207" name="京都市役所前"/>
+        <busStop id="5219651004" name="烏丸御池"/>
+    </ptLine>
+    <ptLine id="8030560" name="京都市営地下鉄烏丸線 : :竹田→国際会館" line="K" type="subway" vClass="subway" color="60,179,113" completeness="0.13" missingBefore="7" missingAfter="6">
+        <route edges="30662077 30662093#1"/>
+        <busStop id="339087268" name="烏丸御池"/>
+        <busStop id="339087047" name="丸太町"/>
+    </ptLine>
+    <ptLine id="8030561" name="京都市営地下鉄東西線 : 太秦天神川→六地蔵" line="T" type="subway" vClass="subway" color="255,69,0" completeness="0.24" missingBefore="4" missingAfter="9">
+        <route edges="1178632943 1178632938#1 1178632938#2"/>
+        <busStop id="10949479984" name="烏丸御池"/>
+        <busStop id="10949479955" name="京都市役所前"/>
+        <busStop id="10949479931" name="三条京阪"/>
+        <busStop id="10949479923" name="東山"/>
+    </ptLine>
+</ptLines>

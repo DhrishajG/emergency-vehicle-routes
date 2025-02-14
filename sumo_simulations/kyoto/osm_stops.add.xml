@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-02-12 16:55:54 by Eclipse SUMO netconvert Version v1_21_0+1021-4606c0d7274
+<netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <type-files value="${SUMO_HOME}/data/typemap/osmNetconvert.typ.xml,${SUMO_HOME}/data/typemap/osmNetconvertAerialway.typ.xml"/>
+        <osm-files value="osm_bbox.osm.xml.gz"/>
+    </input>
+
+    <output>
+        <output-file value="osm.net.xml.gz"/>
+        <output.street-names value="true"/>
+        <output.original-names value="true"/>
+        <ptstop-output value="osm_stops.add.xml"/>
+        <ptline-output value="osm_ptlines.xml"/>
+    </output>
+
+    <projection>
+        <proj.utm value="true"/>
+    </projection>
+
+    <processing>
+        <geometry.remove value="true"/>
+        <roundabouts.guess value="true"/>
+        <lefthand value="true"/>
+    </processing>
+
+    <tls_building>
+        <tls.discard-simple value="true"/>
+        <tls.join value="true"/>
+        <tls.guess-signals value="true"/>
+        <tls.default-type value="actuated"/>
+    </tls_building>
+
+    <ramp_guessing>
+        <ramps.guess value="true"/>
+    </ramp_guessing>
+
+    <junctions>
+        <junctions.join value="true"/>
+        <junctions.corner-detail value="5"/>
+    </junctions>
+
+    <railway>
+        <railway.topology.repair value="true"/>
+    </railway>
+
+</netconvertConfiguration>
+-->
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <busStop id="-6944607600" name="京都河原町" lane="-741839578_0" startPos="0.00" endPos="200.00" friendlyPos="true">
+        <access lane="-174762073#0_0" pos="4.27" length="6.51" friendlyPos="1"/>
+        <access lane="174762073#0_0" pos="15.85" length="1.71" friendlyPos="1"/>
+        <access lane="174762073#1_0" pos="0.00" length="14.28" friendlyPos="1"/>
+        <access lane="465066445#16_0" pos="24.23" length="9.40" friendlyPos="1"/>
+        <access lane="465069408#1_0" pos="0.00" length="10.53" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-6944607673" name="烏丸" lane="-741839581#0_0" startPos="304.91" endPos="504.91" friendlyPos="true">
+        <access lane="174762072#1_0" pos="40.88" length="7.89" friendlyPos="1"/>
+        <access lane="465066447#0_0" pos="40.98" length="16.40" friendlyPos="1"/>
+        <access lane="465069406#0_0" pos="40.80" length="12.84" friendlyPos="1"/>
+        <access lane="465069430#1_0" pos="0.00" length="65.03" friendlyPos="1"/>
+        <access lane="465069436#1_0" pos="49.15" length="3.80" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-7795996209" name="京都河原町" lane="-741839574#0_0" startPos="146.46" endPos="346.46" friendlyPos="true">
+        <access lane="-174762073#0_0" pos="4.26" length="9.17" friendlyPos="1"/>
+        <access lane="162038411#1_0" pos="53.39" length="14.98" friendlyPos="1"/>
+        <access lane="162038411#2_0" pos="3.74" length="4.33" friendlyPos="1"/>
+        <access lane="174762073#0_0" pos="15.86" length="13.97" friendlyPos="1"/>
+        <access lane="465069408#0_0" pos="0.38" length="10.59" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-7795996210" name="京都河原町" lane="-881920709_0" startPos="0.00" endPos="163.64" friendlyPos="true">
+        <access lane="380083522#1_0" pos="44.95" length="2.39" friendlyPos="1"/>
+        <access lane="465066447#25_0" pos="52.13" length="20.01" friendlyPos="1"/>
+        <access lane="465069406#24_0" pos="116.01" length="8.48" friendlyPos="1"/>
+        <access lane="465069439#2_0" pos="108.67" length="11.34" friendlyPos="1"/>
+        <access lane="843908918#4_0" pos="0.32" length="58.49" friendlyPos="1"/>
+    </busStop>
+    <busStop id="10949479923" name="東山" lane="1178632938#2_0" startPos="1118.35" endPos="1318.35" friendlyPos="true" lines="OT T">
+        <access lane="1217783026_0" pos="1.16" length="21.27" friendlyPos="1"/>
+        <access lane="273276548#3_0" pos="29.68" length="16.14" friendlyPos="1"/>
+        <access lane="28402285#5_0" pos="116.80" length="0.59" friendlyPos="1"/>
+        <access lane="546127108#0_0" pos="32.33" length="4.81" friendlyPos="1"/>
+        <access lane="760686785#1_0" pos="30.53" length="21.00" friendlyPos="1"/>
+    </busStop>
+    <busStop id="10949479931" name="三条京阪" lane="1178632938#2_0" startPos="587.39" endPos="787.39" friendlyPos="true" lines="OT T">
+        <access lane="-1225611659#2_0" pos="11.70" length="13.20" friendlyPos="1"/>
+        <access lane="1225611250#0_0" pos="0.00" length="35.64" friendlyPos="1"/>
+        <access lane="1225611659#2_0" pos="48.93" length="8.40" friendlyPos="1"/>
+        <access lane="455947741#3_0" pos="11.82" length="20.38" friendlyPos="1"/>
+        <access lane="542775403#3_0" pos="48.74" length="0.49" friendlyPos="1"/>
+    </busStop>
+    <busStop id="10949479955" name="京都市役所前" lane="1178632938#2_0" startPos="50.56" endPos="250.56" friendlyPos="true" lines="OT T">
+        <access lane="296062481#1_0" pos="19.97" length="13.39" friendlyPos="1"/>
+        <access lane="476097585#3_0" pos="30.85" length="29.37" friendlyPos="1"/>
+        <access lane="476097585#4_0" pos="0.00" length="37.68" friendlyPos="1"/>
+        <access lane="592012035#1_0" pos="88.05" length="32.99" friendlyPos="1"/>
+        <access lane="963225381#0_0" pos="85.56" length="23.92" friendlyPos="1"/>
+    </busStop>
+    <busStop id="10949479984" name="烏丸御池" lane="1178632943_0" startPos="718.04" endPos="918.04" friendlyPos="true" lines="OT T">
+        <access lane="267676656#0_0" pos="0.00" length="13.42" friendlyPos="1"/>
+        <access lane="476097634#1_0" pos="5.32" length="23.07" friendlyPos="1"/>
+        <access lane="476097669#0_0" pos="19.95" length="5.20" friendlyPos="1"/>
+        <access lane="476097669#1_0" pos="0.00" length="13.91" friendlyPos="1"/>
+        <access lane="725231771_0" pos="0.00" length="23.23" friendlyPos="1"/>
+    </busStop>
+    <busStop id="1854284715" name="祇園" lane="854442449#12_0" startPos="34.42" endPos="49.42" friendlyPos="true"/>
+    <busStop id="2785051569" name="祇園" lane="557248345#1_0" startPos="0.55" endPos="15.55" friendlyPos="true" lines="100"/>
+    <busStop id="335667743" name="烏丸" lane="30415674_0" startPos="675.36" endPos="875.36" friendlyPos="true" lines="HK">
+        <access lane="174762072#1_0" pos="40.95" length="0.76" friendlyPos="1"/>
+        <access lane="465066447#0_0" pos="41.03" length="7.75" friendlyPos="1"/>
+        <access lane="465069406#0_0" pos="40.88" length="21.49" friendlyPos="1"/>
+        <access lane="465069430#2_0" pos="0.00" length="65.36" friendlyPos="1"/>
+        <access lane="465069436#1_0" pos="49.08" length="12.45" friendlyPos="1"/>
+    </busStop>
+    <busStop id="335826528" name="三条" lane="844434270_0" startPos="0.00" endPos="91.01" friendlyPos="true" lines="KH">
+        <access lane="1020559986#1_0" pos="0.00" length="11.71" friendlyPos="1"/>
+        <access lane="198413509#1_0" pos="0.00" length="4.24" friendlyPos="1"/>
+        <access lane="198413509#4_0" pos="3.83" length="16.91" friendlyPos="1"/>
+        <access lane="268683798_0" pos="4.25" length="7.81" friendlyPos="1"/>
+        <access lane="465069394#0_0" pos="0.20" length="12.24" friendlyPos="1"/>
+    </busStop>
+    <busStop id="339086095" name="三条京阪" lane="30661903_0" startPos="665.76" endPos="865.76" friendlyPos="true" lines="OT T">
+        <access lane="-966474540_0" pos="0.00" length="15.80" friendlyPos="1"/>
+        <access lane="198413509#2_0" pos="0.00" length="13.90" friendlyPos="1"/>
+        <access lane="272781885#2_0" pos="0.00" length="12.56" friendlyPos="1"/>
+        <access lane="542775403#1_0" pos="38.31" length="12.59" friendlyPos="1"/>
+        <access lane="966474540_0" pos="44.26" length="9.33" friendlyPos="1"/>
+    </busStop>
+    <busStop id="339086117" name="東山" lane="30661903_0" startPos="136.65" endPos="336.65" friendlyPos="true" lines="OT T">
+        <access lane="273276548#4_0" pos="38.99" length="0.88" friendlyPos="1"/>
+        <access lane="28402285#5_0" pos="15.11" length="16.67" friendlyPos="1"/>
+        <access lane="555756332#2_0" pos="0.00" length="25.43" friendlyPos="1"/>
+        <access lane="760686785#2_0" pos="38.54" length="5.83" friendlyPos="1"/>
+        <access lane="760686785#3_0" pos="0.00" length="29.51" friendlyPos="1"/>
+    </busStop>
+    <busStop id="339086207" name="京都市役所前" lane="30661903_0" startPos="1194.41" endPos="1394.41" friendlyPos="true" lines="OT T">
+        <access lane="186983974#1_0" pos="89.51" length="52.03" friendlyPos="1"/>
+        <access lane="476097646#1_0" pos="92.50" length="45.80" friendlyPos="1"/>
+        <access lane="476097674#4_0" pos="91.71" length="28.14" friendlyPos="1"/>
+        <access lane="592012033#1_0" pos="30.90" length="1.49" friendlyPos="1"/>
+        <access lane="592012047#2_0" pos="68.13" length="18.38" friendlyPos="1"/>
+    </busStop>
+    <busStop id="339087047" name="丸太町" lane="30662093#1_0" startPos="452.69" endPos="652.69" friendlyPos="true" lines="B;K K">
+        <access lane="370686745#0_0" pos="0.00" length="12.52" friendlyPos="1"/>
+        <access lane="370686745#1_0" pos="0.00" length="15.79" friendlyPos="1"/>
+        <access lane="552944793#0_0" pos="0.20" length="12.61" friendlyPos="1"/>
+        <access lane="600354692#7_0" pos="51.11" length="17.01" friendlyPos="1"/>
+        <access lane="662249675#2_0" pos="0.00" length="12.35" friendlyPos="1"/>
+    </busStop>
+    <busStop id="339087268" name="烏丸御池" lane="30662077_0" startPos="605.81" endPos="805.81" friendlyPos="true" lines="B;K K">
+        <access lane="267676678#0_0" pos="0.20" length="15.18" friendlyPos="1"/>
+        <access lane="267676678#2_0" pos="0.00" length="18.24" friendlyPos="1"/>
+        <access lane="476097616#1_0" pos="0.20" length="19.99" friendlyPos="1"/>
+        <access lane="476097621#0_0" pos="0.00" length="17.33" friendlyPos="1"/>
+        <access lane="476097622_0" pos="63.85" length="17.13" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4893246676" lane="28382576#3_0" startPos="0.00" endPos="23.43" friendlyPos="true"/>
+    <busStop id="4893246677" lane="28382576#2_0" startPos="3.63" endPos="28.63" friendlyPos="true"/>
+    <busStop id="4893246689" lane="465066430#1_0" startPos="27.07" endPos="42.07" friendlyPos="true"/>
+    <busStop id="4893246694" lane="465066430#1_0" startPos="4.96" endPos="19.96" friendlyPos="true"/>
+    <busStop id="4893246695" lane="465066430#1_0" startPos="20.43" endPos="35.43" friendlyPos="true"/>
+    <busStop id="4893246696" lane="465066430#1_0" startPos="37.57" endPos="52.57" friendlyPos="true"/>
+    <busStop id="4893246697" lane="465066430#2_0" startPos="4.80" endPos="19.80" friendlyPos="true"/>
+    <busStop id="4893246698" lane="1101850021_0" startPos="13.63" endPos="28.63" friendlyPos="true"/>
+    <busStop id="4893246699" lane="1101850022#0_0" startPos="0.00" endPos="15.00" friendlyPos="true"/>
+    <busStop id="5219651004" name="烏丸御池" lane="1178632946#2_0" startPos="143.79" endPos="343.79" friendlyPos="true" lines="OT T">
+        <access lane="256843836_0" pos="27.35" length="22.89" friendlyPos="1"/>
+        <access lane="27580563#21_0" pos="20.58" length="21.84" friendlyPos="1"/>
+        <access lane="34634619#2_0" pos="3.33" length="41.57" friendlyPos="1"/>
+        <access lane="725231785#1_0" pos="22.89" length="42.25" friendlyPos="1"/>
+        <access lane="978085964#1_0" pos="27.12" length="6.51" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6883622246" name="三条" lane="844434271_0" startPos="0.00" endPos="83.69" friendlyPos="true" lines="京阪本線・鴨東線 KH">
+        <access lane="1020559986#1_0" pos="0.00" length="14.59" friendlyPos="1"/>
+        <access lane="198413509#1_0" pos="0.00" length="11.78" friendlyPos="1"/>
+        <access lane="199311774_0" pos="100.06" length="14.75" friendlyPos="1"/>
+        <access lane="268683798_0" pos="4.25" length="15.33" friendlyPos="1"/>
+        <access lane="465069394#0_0" pos="0.20" length="18.89" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6944607600" name="京都河原町" lane="741839578_0" startPos="129.99" endPos="329.99" friendlyPos="true">
+        <access lane="-174762073#0_0" pos="4.27" length="6.51" friendlyPos="1"/>
+        <access lane="174762073#0_0" pos="15.85" length="1.71" friendlyPos="1"/>
+        <access lane="174762073#1_0" pos="0.00" length="14.28" friendlyPos="1"/>
+        <access lane="465066445#16_0" pos="24.23" length="9.40" friendlyPos="1"/>
+        <access lane="465069408#1_0" pos="0.00" length="10.53" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6944607673" name="烏丸" lane="741839582_0" startPos="445.91" endPos="645.91" friendlyPos="true" lines="HK">
+        <access lane="174762072#1_0" pos="40.88" length="7.89" friendlyPos="1"/>
+        <access lane="465066447#0_0" pos="40.98" length="16.40" friendlyPos="1"/>
+        <access lane="465069406#0_0" pos="40.80" length="12.84" friendlyPos="1"/>
+        <access lane="465069430#1_0" pos="0.00" length="65.03" friendlyPos="1"/>
+        <access lane="465069436#1_0" pos="49.15" length="3.80" friendlyPos="1"/>
+    </busStop>
+    <busStop id="7781211828" name="烏丸御池" lane="833544793_0" startPos="11.63" endPos="211.63" friendlyPos="true" lines="K;B K">
+        <access lane="267676678#0_0" pos="0.20" length="21.94" friendlyPos="1"/>
+        <access lane="267676678#2_0" pos="0.00" length="11.50" friendlyPos="1"/>
+        <access lane="476097614_0" pos="0.00" length="13.45" friendlyPos="1"/>
+        <access lane="476097616#0_0" pos="0.20" length="23.63" friendlyPos="1"/>
+        <access lane="476097616#1_0" pos="0.20" length="13.30" friendlyPos="1"/>
+    </busStop>
+    <busStop id="7781214903" name="丸太町" lane="833545105_0" startPos="37.86" endPos="237.86" friendlyPos="true" lines="K;B K">
+        <access lane="370686737#2_0" pos="54.50" length="12.43" friendlyPos="1"/>
+        <access lane="552944791#1_0" pos="0.20" length="10.04" friendlyPos="1"/>
+        <access lane="600354692#11_0" pos="0.00" length="16.60" friendlyPos="1"/>
+        <access lane="662249675#0_0" pos="0.20" length="8.93" friendlyPos="1"/>
+        <access lane="710681211#0_0" pos="0.00" length="18.04" friendlyPos="1"/>
+    </busStop>
+    <busStop id="7795996209" name="京都河原町" lane="881920708_0" startPos="0.00" endPos="200.00" friendlyPos="true">
+        <access lane="-174762073#0_0" pos="4.26" length="9.17" friendlyPos="1"/>
+        <access lane="162038411#1_0" pos="53.39" length="14.98" friendlyPos="1"/>
+        <access lane="162038411#2_0" pos="3.74" length="4.33" friendlyPos="1"/>
+        <access lane="174762073#0_0" pos="15.86" length="13.97" friendlyPos="1"/>
+        <access lane="465069408#0_0" pos="0.38" length="10.59" friendlyPos="1"/>
+    </busStop>
+    <busStop id="7795996210" name="京都河原町" lane="741839575_0" startPos="0.00" endPos="163.64" friendlyPos="true" lines="HK">
+        <access lane="380083522#1_0" pos="44.95" length="2.39" friendlyPos="1"/>
+        <access lane="465066447#25_0" pos="52.13" length="20.01" friendlyPos="1"/>
+        <access lane="465069406#24_0" pos="116.01" length="8.48" friendlyPos="1"/>
+        <access lane="465069439#2_0" pos="108.67" length="11.34" friendlyPos="1"/>
+        <access lane="843908918#4_0" pos="0.32" length="58.49" friendlyPos="1"/>
+    </busStop>
+    <busStop id="7877004843" name="三条" lane="844434268_0" startPos="0.00" endPos="91.85" friendlyPos="true">
+        <access lane="198413509#1_0" pos="2.36" length="3.70" friendlyPos="1"/>
+        <access lane="198413509#4_0" pos="3.83" length="10.29" friendlyPos="1"/>
+        <access lane="268683798_0" pos="2.82" length="0.06" friendlyPos="1"/>
+        <access lane="465069393#2_0" pos="1.20" length="10.29" friendlyPos="1"/>
+        <access lane="465069394#0_0" pos="0.20" length="7.91" friendlyPos="1"/>
+    </busStop>
+    <busStop id="7877004844" name="三条" lane="844434269_0" startPos="0.00" endPos="84.54" friendlyPos="true">
+        <access lane="199311774_0" pos="100.06" length="12.49" friendlyPos="1"/>
+        <access lane="465069392#0_0" pos="0.20" length="13.25" friendlyPos="1"/>
+        <access lane="465069394#2_0" pos="0.00" length="13.70" friendlyPos="1"/>
+        <access lane="465069395#0_0" pos="2.34" length="11.92" friendlyPos="1"/>
+        <access lane="465069395#1_0" pos="0.00" length="14.37" friendlyPos="1"/>
+    </busStop>
+</additional>

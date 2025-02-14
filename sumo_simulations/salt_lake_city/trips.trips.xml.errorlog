@@ -1,0 +1,44 @@
+Warning: At actuated tlLogic 'cluster_10003084951_1587201908_2048582455_4601131528_#5more', actuated phase 2 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_10003084951_1587201908_2048582455_4601131528_#5more', linkIndex 3,4,5,14,15,16,17 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_10057038612_1581342139_1595614636_1595614637_#9more', linkIndex 3,4,16,17,18 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_11998168492_11998168502_4584915293_4584915294_#3more', actuated phase 2 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_11998168492_11998168502_4584915293_4584915294_#3more', actuated phase 7 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_11998168492_11998168502_4584915293_4584915294_#3more', linkIndex 3,4,5,6,17,18,19,24,25,26,27,37,38,39 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_12057748231_12057748232_12057748239_12057748240_#8more', actuated phase 2 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_12057748231_12057748232_12057748239_12057748240_#8more', linkIndex 16,17,18,35,36,37 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_12108500780_12108500781_4582993974_4582993978_#3more', actuated phase 2 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_12108500780_12108500781_4582993974_4582993978_#3more', linkIndex 9,10,11,12,22,23,24,25 has no controlling detector.
+Warning: Railway routing failure due to turn-around on short edge '283890171#37' for vehicle '5_light_rail_704:0' time=253.00.
+Warning: Vehicle '5_light_rail_704:0' has no valid route from edge '283890171#37' to stop edge '283890171#36'.
+Warning: No connection between edge '283890171#36' and edge '283890171#26' found.
+Warning: Vehicle '5_light_rail_704:0' has no valid route from edge '283890171#36' to stop edge '283890171#26'.
+Warning: No connection between edge '283890171#23' and edge '283890171#17' found.
+Warning: Vehicle '5_light_rail_704:0' has no valid route from edge '283890171#26' to stop edge '283890171#17'.
+Warning: No connection between edge '283890171#13' and edge '283890171#6' found.
+Warning: Vehicle '5_light_rail_704:0' has no valid route from edge '283890171#17' to stop edge '283890171#6'.
+Warning: No connection between edge '283890171#5' and edge '254604695#1' found.
+Warning: Vehicle '5_light_rail_704:0' has no valid route from edge '283890171#6' to stop edge '254604695#1'.
+Warning: No connection between edge '348043138#1' and edge '106345198#6' found.
+Warning: Vehicle '7_light_rail_704:1' has no valid route from edge '348043138#1' to stop edge '106345198#6'.
+Warning: Railway routing failure due to turn-around on short edge '283890171#37' for vehicle '8_light_rail_701:1' time=253.00.
+Warning: Vehicle '8_light_rail_701:1' has no valid route from edge '283890171#37' to stop edge '283890171#36'.
+Warning: Vehicle '8_light_rail_701:1' has no valid route from edge '283890171#36' to stop edge '283890171#26'.
+Warning: Vehicle '8_light_rail_701:1' has no valid route from edge '283890171#26' to stop edge '283890171#17'.
+Warning: Vehicle '8_light_rail_701:1' has no valid route from edge '283890171#17' to stop edge '283890171#6'.
+Warning: Vehicle '8_light_rail_701:1' has no valid route from edge '283890171#6' to stop edge '254604695#1'.
+Warning: Vehicle '6_light_rail_701:0' has no valid route from edge '348043138#1' to stop edge '106345198#6'.
+Warning: Teleporting vehicle '5_light_rail_704:0'; waited too long (wrong lane), lane='283890171#37_0', time=684.00.
+Warning: Vehicle '5_light_rail_704:0' skips stop on lane '283890171#36_0' time=689.00.
+Warning: Vehicle '5_light_rail_704:0' ends teleporting on edge '283890171#26', time=690.00.
+Warning: Teleporting vehicle '6_light_rail_701:0'; waited too long (wrong lane), lane='348043138#1_0', time=738.00.
+Warning: Vehicle '6_light_rail_701:0' ends teleporting on edge '106345198#6', time=738.00.
+Warning: Teleporting vehicle '8_light_rail_701:1'; waited too long (wrong lane), lane='283890171#37_0', time=985.00.
+Warning: Vehicle '8_light_rail_701:1' ends teleporting on edge '283890171#36', time=985.00.
+Warning: Teleporting vehicle '5_light_rail_704:0'; waited too long (wrong lane), lane='283890171#26_0', time=1021.00.
+Warning: Vehicle '5_light_rail_704:0' ends teleporting on edge '283890171#17', time=1021.00.
+Warning: Teleporting vehicle '7_light_rail_704:1'; waited too long (wrong lane), lane='348043138#1_0', time=1070.00.
+Warning: Vehicle '7_light_rail_704:1' ends teleporting on edge '106345198#6', time=1070.00.
+Warning: 17 total messages of type: At actuated tlLogic '%', linkIndex % has no controlling detector.
+Warning: 10 total messages of type: No connection between edge '%' and edge '%' found.
+Warning: 11 total messages of type: Teleporting vehicle '%'; waited too long (wrong lane), lane='%', time=%.
+Warning: 11 total messages of type: Vehicle '%' ends teleporting on edge '%', time=%.

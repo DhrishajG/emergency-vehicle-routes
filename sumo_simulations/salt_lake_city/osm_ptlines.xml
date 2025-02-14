@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-02-12 17:18:59 by Eclipse SUMO netconvert Version v1_21_0+1021-4606c0d7274
+<netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <type-files value="${SUMO_HOME}/data/typemap/osmNetconvert.typ.xml,${SUMO_HOME}/data/typemap/osmNetconvertAerialway.typ.xml"/>
+        <osm-files value="osm_bbox.osm.xml.gz"/>
+    </input>
+
+    <output>
+        <output-file value="osm.net.xml.gz"/>
+        <output.street-names value="true"/>
+        <output.original-names value="true"/>
+        <ptstop-output value="osm_stops.add.xml"/>
+        <ptline-output value="osm_ptlines.xml"/>
+    </output>
+
+    <projection>
+        <proj.utm value="true"/>
+    </projection>
+
+    <processing>
+        <geometry.remove value="true"/>
+        <roundabouts.guess value="true"/>
+    </processing>
+
+    <tls_building>
+        <tls.discard-simple value="true"/>
+        <tls.join value="true"/>
+        <tls.guess-signals value="true"/>
+        <tls.default-type value="actuated"/>
+    </tls_building>
+
+    <ramp_guessing>
+        <ramps.guess value="true"/>
+    </ramp_guessing>
+
+    <junctions>
+        <junctions.join value="true"/>
+        <junctions.corner-detail value="5"/>
+    </junctions>
+
+    <railway>
+        <railway.topology.repair value="true"/>
+    </railway>
+
+</netconvertConfiguration>
+-->
+
+<ptLines xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/ptlines_file.xsd">
+    <ptLine id="14407271" line="1" type="bus" vClass="bus" color="green" completeness="0.01" missingBefore="14" missingAfter="65">
+        <route edges="382417140#0 1347280388 1347280387#0 1347280387#1 416766496#0 416766496#1 416766496#4 416766496#5 416766496#6 416766505#0 416768135#0 416768149#0 416768149#1 416768140 172946090#1 172946090#2 172946090#4 172946090#5 172946090#6 1346555803 1067489910 828477290#0 1067489911#1 1067489911#3 169783428#1 169783428#2 1190539539#1 1190539539#2 1190539539#3 1190539540#1 1190539541#0 1190539541#1 1190539542 589709907#0 589709901#1 589709901#2 1190597294#0 205584217#1 205584217#2 1090197064#1 659463304#1 659463304#2 659463304#4 591388281#0 591388281#1 152356345 1171486246#0 1171486246#2 -1190765741 -10150309#2"/>
+        <busStop id="10028415195" name="South Temple @ F Street"/>
+    </ptLine>
+    <ptLine id="14407272" line="1" type="bus" vClass="bus" color="green" completeness="0.02" missingBefore="68" missingAfter="13">
+        <route edges="288352347#1 288352347#2 288352347#4 1030759148#0 290431848#1 144668573#2 828456094 828456095#0 144668572#1 290431847#0 290431847#1 -1190533992#0 -169783428#1 -169783428#0 -1067489911#2 -828477290#1 -1067489910 -1346555803 -172946090#6 -172946090#5 -172946090#4 -172946090#3 -172946090#1 -416768128 -416768149#2 -416768149#0 -416768135#1 -416766505#0 -416766496#7 -416766496#5 -416766496#4 -416766496#2 -416766496#0 -1347280387#2 -1347280387#0 -1347280388 -382417140#1"/>
+        <busStop id="-10028415194" name="South Temple @ 300 East"/>
+        <busStop id="-10028415192" name="South Temple @ 400 East"/>
+    </ptLine>
+    <ptLine id="1516765" name="TRAX Red Line: University Medical Center → Daybreak Parkway" line="703" type="light_rail" vClass="rail_urban" color="236,28,36" completeness="0.12" missingBefore="5" missingAfter="17">
+        <route edges="145012014#0 145012014#2 145012014#3 145012014#4 145012014#6 145012014#7 145012014#8 145012014#9 145012014#10 145012014#11 145012014#12 145012014#13 145012014#14 145012014#15 145012014#16 145012014#18 145012014#19 145012014#20 145012014#21 145012014#22 145012014#23 145012014#25 145012014#26 405168455#0 405168455#1 405168455#4 405168455#5 405168455#6 254604695#0 254604695#1 254604695#2 254604695#3 254604695#4 254604695#5 254604695#6 254604695#7 254604695#8"/>
+        <busStop id="1584802910" name="Trolley"/>
+        <busStop id="1584802892" name="Library"/>
+        <busStop id="5919129374" name="Courthouse"/>
+    </ptLine>
+    <ptLine id="17079900" name="BSB - U Hospital" line="Brown" type="bus" vClass="bus" color="66,38,3" completeness="0.06" missingBefore="13" missingAfter="2">
+        <route edges="-1086822701#1 -829341691#6 -829341691#5 -829341691#4 -829341691#2 -829341691#1 -829341689#5 -829341689#3 -829341689#2 -829341689#1 -829341689#0 -1086822702 -1086822703#2 -1086822703#1 -1086822703#0 -829341687#3 -829341687#2 -829341687#1 -829341687#0 -1086822700#0 -1086822704#1 -1086822704#0 -1086822705#2 -1086822705#1 -1086822705#0 -829341684#1 -1086822707#1 -1086822706#2 -1086822706#1 -1086822706#0 -205584216#2 1190597557#1 684690206#1 684690206#2 684690206#3 684690206#4 684690206#5 1190597558#0 1300633427#1 1303307214#0 1303307214#1 1307351275 1339672555 1303307215#1 704074200#0 704074200#1 704074200#2 704074200#3 1307351276 1300633426 1300633424#1 1307351282 1025530501#0 1025530501#1 1025530501#2 1025530501#3 1339672554#1 1294636486#1 1060099609#1 1294636485#0 1294636485#1 589711308#1 589711308#2 589711308#3 1339672553 1060099608 1307351283#0 -589711307#9 -589711307#8 -589711307#7 -589711307#6 -589711307#5 -589711307#4 -589711307#3 -589711307#2 -589711307#1 1086822702 829341689#0 829341689#1 829341689#2 829341689#3 829341689#4 829341691#0 829341691#2 829341691#4 829341691#5 829341691#6 1086822701#0"/>
+        <busStop id="-6459176502" name="Business Services Building"/>
+    </ptLine>
+    <ptLine id="1963852" name="TRAX Red Line: Daybreak Parkway → University Medical Center" line="703" type="light_rail" vClass="rail_urban" color="236,28,36" completeness="0.12" missingBefore="17" missingAfter="5">
+        <route edges="-348043138#8 -348043138#7 -348043138#6 -348043138#5 -348043138#4 -348043138#3 -348043138#2 -348043138#1 -348043138#0 -911971319#4 -911971319#0 1025530504#0 1025530504#1 1025530504#3 1025530504#4 1025530504#5 1025530504#6 1025530504#7 1025530504#8 1025530504#10 1025530504#11 1025530504#12 145012015#0 145012015#1 145012015#2 145012015#3 145012015#4 145012015#5 145012015#6 145012015#7 145012015#9 145012015#10 145012015#11 145012015#13"/>
+        <busStop id="-5919129373" name="Courthouse"/>
+        <busStop id="1584813022" name="Library"/>
+        <busStop id="1584813024" name="Trolley"/>
+    </ptLine>
+    <ptLine id="2882403" name="TRAX Green Line: Airport → West Valley Central" line="704" type="light_rail" vClass="rail_urban" color="0,160,118" completeness="0.28" missingBefore="6" missingAfter="7">
+        <route edges="283890171#37 283890171#36 283890171#35 283890171#33 283890171#32 283890171#31 283890171#30 283890171#29 283890171#28 283890171#27 283890171#26 283890171#25 283890171#24 283890171#23 283890171#22 283890171#18 283890171#17 283890171#16 283890171#14 283890171#13 283890171#12 283890171#11 283890171#10 283890171#9 283890171#8 283890171#7 283890171#6 283890171#5 283890171#4 283890171#2 283890171#1 283890171#0 254604492#4 254604492#3 254604492#1 254604492#0"/>
+        <busStop id="5919129381" name="Arena"/>
+        <busStop id="5919129379" name="Temple Square"/>
+        <busStop id="5919129378" name="City Center"/>
+        <busStop id="5919129375" name="Gallivan Plaza"/>
+        <busStop id="5919129374" name="Courthouse"/>
+    </ptLine>
+    <ptLine id="6073250" name="TRAX Blue Line: Draper Town Center → Salt Lake Central" line="701" type="light_rail" vClass="rail_urban" color="0,85,164" completeness="0.21" missingBefore="16" missingAfter="3">
+        <route edges="-348043138#8 -348043138#7 -348043138#6 -348043138#5 -348043138#4 -348043138#3 -348043138#2 -348043138#1 -348043138#0 145012013#6 145012013#5 145012013#4 145012013#2 145012013#1 145012013#0"/>
+        <busStop id="5919129373" name="Courthouse"/>
+        <busStop id="1226595410" name="Gallivan Plaza"/>
+        <busStop id="1226596243" name="City Center"/>
+        <busStop id="5919129380" name="Temple Square"/>
+        <busStop id="1226596499" name="Arena"/>
+    </ptLine>
+    <ptLine id="6073251" name="TRAX Green Line: West Valley Central → Airport" line="704" type="light_rail" vClass="rail_urban" color="0,160,118" completeness="0.28" missingBefore="7" missingAfter="6">
+        <route edges="-348043138#8 -348043138#7 -348043138#6 -348043138#5 -348043138#4 -348043138#3 -348043138#2 -348043138#1 -348043138#0 145012013#6 145012013#5 145012013#4 145012013#2 145012013#1 145012013#0"/>
+        <busStop id="5919129373" name="Courthouse"/>
+        <busStop id="1226595410" name="Gallivan Plaza"/>
+        <busStop id="1226596243" name="City Center"/>
+        <busStop id="5919129380" name="Temple Square"/>
+        <busStop id="1226596499" name="Arena"/>
+    </ptLine>
+    <ptLine id="907522" name="TRAX Blue Line: Salt Lake Central → Draper Town Center" line="701" type="light_rail" vClass="rail_urban" color="0,85,164" completeness="0.21" missingBefore="3" missingAfter="16">
+        <route edges="283890171#37 283890171#36 283890171#35 283890171#33 283890171#32 283890171#31 283890171#30 283890171#29 283890171#28 283890171#27 283890171#26 283890171#25 283890171#24 283890171#23 283890171#22 283890171#18 283890171#17 283890171#16 283890171#14 283890171#13 283890171#12 283890171#11 283890171#10 283890171#9 283890171#8 283890171#7 283890171#6 283890171#5 283890171#4 283890171#2 283890171#1 283890171#0 254604492#4 254604492#3 254604492#1 254604492#0"/>
+        <busStop id="5919129381" name="Arena"/>
+        <busStop id="5919129379" name="Temple Square"/>
+        <busStop id="5919129378" name="City Center"/>
+        <busStop id="5919129375" name="Gallivan Plaza"/>
+        <busStop id="5919129374" name="Courthouse"/>
+    </ptLine>
+</ptLines>
