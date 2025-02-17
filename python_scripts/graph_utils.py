@@ -21,17 +21,17 @@ def extract_graph(network_file):
             weight = edge.getLength() / edge.getSpeed()
         
             if traci.edge.getLaneNumber(edge_id) == 1:
-                weight *= 1.3  # Narrow road penalty
+                weight *= 1.2  # Narrow road penalty
 
             graph.add_edge(from_node, to_node, key=edge_id, weight=weight)
             edge_labels[(from_node, to_node)] = f"{weight:.2f}"
     
     # Draw the graph representation of the road network
-    draw_graph = input("Do you want to draw the graph? (y/n): ")
-    if draw_graph.lower() == "y":
-        nx.draw(graph, pos, with_labels=False, node_size=50)
-        nx.draw_networkx_edge_labels(graph, pos, edge_labels=edge_labels, font_size=8)
-        plt.show()
+    # draw_graph = input("Do you want to draw the graph? (y/n): ")
+    # if draw_graph.lower() == "y":
+    #     nx.draw(graph, pos, with_labels=False, node_size=50)
+    #     nx.draw_networkx_edge_labels(graph, pos, edge_labels=edge_labels, font_size=8)
+    #     plt.show()
     return graph, pos
 
 def get_edge_path(graph, node_path):

@@ -2,15 +2,16 @@ import traci
 from ambulance_simulation import add_ambulance, track_ambulance, end_simulation
 from algorithms import a_star, djikstra, aco_shortest_path
 from constants import ConfigFile, NetworkFile, StartNode, EndNode, CongestionPath, AccidentEdge
+from graph_utils import extract_graph
 from traffic_simulations import toggle_scenario
 
-CONFIG_FILE = ConfigFile.small_block.value
-NETWORK_FILE = NetworkFile.small_block.value
-START_NODE = StartNode.small_block.value
-END_NODE = EndNode.small_block.value
+CONFIG_FILE = ConfigFile.city_block.value
+NETWORK_FILE = NetworkFile.city_block.value
+START_NODE = StartNode.city_block.value
+END_NODE = EndNode.city_block.value
 AMBULANCE_ID = "ambulance_1"
-CONGESTION_ROUTE = CongestionPath.small_block.value
-ACCIDENT_EDGE = AccidentEdge.small_block.value
+CONGESTION_ROUTE = CongestionPath.city_block.value
+ACCIDENT_EDGE = AccidentEdge.city_block.value
 
 def main():
     """Main entry point for the simulation."""
@@ -22,19 +23,20 @@ def main():
         # Add random congestion to the specified edge
         toggle_scenario('accident', enable=False, route=CONGESTION_ROUTE, accident_edge=ACCIDENT_EDGE, num_vehicles=7)
 
-        edge_path = aco_shortest_path(NETWORK_FILE, START_NODE, END_NODE)
+        graph, pos = extract_graph(NETWORK_FILE)
+
+        # edge_path = djikstra(graph, START_NODE, END_NODE)
+        # edge_path = a_star(graph, pos, START_NODE, END_NODE)
+        edge_path = aco_shortest_path(graph, START_NODE, END_NODE, num_ants=100)
 
         end_edge = edge_path[-1]
-
-        # edge_path = traci.simulation.findRoute(START_EDGE, END_EDGE).edges
-        # start_edge = START_EDGE
-        # end_edge = END_EDGE
 
         # Add an ambulance to the simulation with the computed path
         add_ambulance(AMBULANCE_ID, edge_path, START_NODE, END_NODE)
 
         # Track the ambulance until it reaches its destination
-        track_ambulance(AMBULANCE_ID, end_edge, END_NODE)
+        sim_time = track_ambulance(AMBULANCE_ID, end_edge, END_NODE)
+        print(f"Ambulance reached the destination in {sim_time} seconds.")
  
     except traci.exceptions.FatalTraCIError as e:
         print(f"TraCI error during simulation: {e}")

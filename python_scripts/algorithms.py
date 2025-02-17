@@ -2,7 +2,6 @@ import math
 import networkx as nx
 import traci
 from aco import AntColonyOptimization
-from aco_routing import ACO
 from graph_utils import extract_graph, get_edge_path
 
 def euclidean_distance(node1, node2, pos):
@@ -16,7 +15,7 @@ def real_time_traffic_heuristic(graph, pos, goal):
     def avg_heuristic(node, goal=goal):
         # Calculate the average heuristic value for all edges connected to the current node
         edge_ids = [key for _, _, key in graph.edges(node, keys=True)]
-        max_speed = max(traci.lane.getMaxSpeed(edge_id + "_0") for edge_id in edge_ids)
+        max_speed = max(traci.lane.getMaxSpeed(edge_id + "_0") for edge_id in edge_ids) if edge_ids else 1
         euclidean_dist = euclidean_distance(node, goal, pos)
         
         # Calculate congestion penalty for each edge individually
@@ -53,9 +52,8 @@ def calculate_turn_penalty(prev_edge, current_edge):
     angle_diff = abs(current_edge_angle - prev_edge_angle)
     return angle_diff / 180  # Adjust the turn penalty based on the sharpness of the turn
 
-def a_star(network_file, start_node, end_node):
+def a_star(graph, pos, start_node, end_node):
     # Extract the graph from the network file
-    graph, pos = extract_graph(network_file)
 
     # Initialize the previous edge
     prev_edge = None
@@ -71,6 +69,7 @@ def a_star(network_file, start_node, end_node):
 
     # Compute the shortest path using A* algorithm with the real-time traffic heuristic and custom edge weight
     heuristic = real_time_traffic_heuristic(graph, pos, end_node)
+    # heuristic = lambda u, v: euclidean_distance(u, v, pos)
     node_path = nx.astar_path(graph, start_node, end_node, heuristic=heuristic, weight=update_weights)
 
     print(f"Computed node path: {node_path}")
@@ -82,9 +81,8 @@ def a_star(network_file, start_node, end_node):
 
     return edge_path
 
-def djikstra(network_file, start_node, end_node):
+def djikstra(graph, start_node, end_node):
     # Extract the graph from the network file
-    graph, _ = extract_graph(network_file)
             
     # Compute the shortest path using Dijkstra's algorithm
     node_path = nx.dijkstra_path(graph, start_node, end_node)
@@ -98,14 +96,11 @@ def djikstra(network_file, start_node, end_node):
 
     return edge_path
 
-def aco_shortest_path(network_file, start_node, end_node):
-    # Extract the graph from the network file
-    graph, _ = extract_graph(network_file)
-
+def aco_shortest_path(graph, start_node, end_node, num_ants=30):
     # Find the best path using ACO
-    aco = AntColonyOptimization(graph, num_ants=50, num_iterations=100)
+    aco = AntColonyOptimization(graph, num_ants=num_ants, num_iterations=100)
     aco_path, aco_length = aco.optimize(start_node, end_node)
-    print(f"Best path: {aco_path}, Cost: {aco_length}")
+    # print(f"Best path: {aco_path}, Cost: {aco_length}")
 
     edge_path = get_edge_path(graph, aco_path)
 
