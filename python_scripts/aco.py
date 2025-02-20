@@ -10,7 +10,10 @@ class AntColonyOptimization:
         self.beta = beta
         self.evaporation_rate = evaporation_rate
         self.pheromone_deposit = pheromone_deposit
-        self.pheromone = {(u, v, k): 1.0 for u, v, k in graph.edges(keys=True)}
+
+        # Initialize pheromone values on the graph
+        for u, v, k in self.graph.edges(keys=True):
+            self.graph[u][v][k]['pheromone'] = 1.0
 
     def heuristic(self, u, v, key):
         """Heuristic function: inverse of edge weight (travel time)."""
@@ -28,7 +31,7 @@ class AntColonyOptimization:
             try:
                 key = min(self.graph[current_node][neighbor], key=lambda x: self.graph[current_node][neighbor][x]['weight'])
                 edge = (current_node, neighbor, key)
-                pheromone = self.pheromone[edge] ** self.alpha
+                pheromone = self.graph[current_node][neighbor][key]['pheromone'] ** self.alpha
                 heuristic = self.heuristic(current_node, neighbor, key) ** self.beta
                 probabilities.append(pheromone * heuristic)
             except KeyError as e:
@@ -88,10 +91,10 @@ class AntColonyOptimization:
         """Update pheromone levels on edges based on ant paths."""
 
         # Evaporate pheromones on all edges
-        for edge in self.pheromone:
-            self.pheromone[edge] *= (1 - self.evaporation_rate)
-            if self.pheromone[edge] <= 0:
-                self.pheromone[edge] = 1e-10  # Reset to a small positive value
+        for u, v, k in self.graph.edges(keys=True):
+            self.graph[u][v][k]['pheromone'] *= (1 - self.evaporation_rate)
+            if self.graph[u][v][k]['pheromone'] <= 0:
+                self.graph[u][v][k]['pheromone'] = 1e-10  # Reset to a small positive value
 
         # Update pheromones for valid paths
         for path, length in zip(paths, path_lengths):
@@ -107,9 +110,9 @@ class AntColonyOptimization:
                 # Get the key for the edge with the minimum weight
                 try:
                     key = min(self.graph[u][v], key=lambda x: self.graph[u][v][x]['weight'])
-                    self.pheromone[(u, v, key)] += self.pheromone_deposit / length
-                    if self.pheromone[(u, v, key)] <= 0:
-                        self.pheromone[(u, v, key)] = 1e-10  # Reset to a small positive value
+                    self.graph[u][v][key]['pheromone'] += self.pheromone_deposit / length
+                    if self.graph[u][v][key]['pheromone'] <= 0:
+                        self.graph[u][v][key]['pheromone'] = 1e-10  # Reset to a small positive value
                 except KeyError as e:
                     continue
 
