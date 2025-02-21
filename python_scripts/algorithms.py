@@ -36,19 +36,20 @@ def real_time_traffic_pheromone_heuristic(graph, pos, goal):
         if not edge_ids:
             return float('inf')  # Avoid dead-end nodes
         
-        max_speed = max(traci.lane.getMaxSpeed(edge_id + "_0") for edge_id in edge_ids)
-        euclidean_dist = euclidean_distance(node, goal, pos)
-        
-        # Get congestion values
+         # Calculate congestion penalty for each edge individually
         congestion_penalties = [traci.edge.getLastStepOccupancy(edge_id) for edge_id in edge_ids]
         avg_congestion_penalty = sum(congestion_penalties) / len(congestion_penalties) if congestion_penalties else 0
+        
+        # Calculate the travel time based on real-time speed
+        travel_times = [traci.lane.getLength(edge_id + "_0") / max(traci.edge.getLastStepMeanSpeed(edge_id), 0.1) for edge_id in edge_ids]
+        avg_travel_time = sum(travel_times) / len(travel_times) if travel_times else float('inf')
         
         # Get pheromone values, default to 1.0 if not initialized
         pheromone_values = [graph[node][neighbor][edge_id].get('pheromone', 1.0) for _, neighbor, edge_id in graph.edges(node, keys=True)]
         avg_pheromone = sum(pheromone_values) / len(pheromone_values) if pheromone_values else 0
         
         # Higher pheromones should reduce cost (preferred paths)
-        return euclidean_dist / max_speed + avg_congestion_penalty - (avg_pheromone * 0.1)  # Adjust weight as needed
+        return avg_travel_time + avg_congestion_penalty + avg_congestion_penalty - (avg_pheromone * 0.1)  # Adjust weight as needed
     
     return heuristic
 
