@@ -25,23 +25,30 @@ def real_time_traffic_heuristic(graph, pos, goal):
         avg_congestion_penalty = sum(congestion_penalties) / len(congestion_penalties) if congestion_penalties else 0
         
         return euclidean_dist / max_speed + avg_congestion_penalty
-    
-    def minimum_heuristic(node, goal=goal):
-        # Calculate the minimum heuristic value for all edges connected to the current node
-        edge_ids = [key for _, _, key in graph.edges(node, keys=True)]
-        min_heuristic = float('inf')
-        
-        for edge_id in edge_ids:
-            max_speed = traci.lane.getMaxSpeed(edge_id + "_0")
-            euclidean_dist = euclidean_distance(node, goal, pos)
-            congestion_penalty = traci.edge.getLastStepOccupancy(edge_id)
-            
-            heuristic_value = euclidean_dist / max_speed + congestion_penalty
-            if heuristic_value < min_heuristic:
-                min_heuristic = heuristic_value
-        
-        return min_heuristic
     return avg_heuristic
+
+def real_time_traffic_pheromone_heuristic(graph, pos, goal):
+    def heuristic(node, goal=goal):
+        edge_ids = [key for _, _, key in graph.edges(node, keys=True)]
+        
+        if not edge_ids:
+            return float('inf')  # Avoid dead-end nodes
+        
+        max_speed = max(traci.lane.getMaxSpeed(edge_id + "_0") for edge_id in edge_ids)
+        euclidean_dist = euclidean_distance(node, goal, pos)
+        
+        # Get congestion values
+        congestion_penalties = [traci.edge.getLastStepOccupancy(edge_id) for edge_id in edge_ids]
+        avg_congestion_penalty = sum(congestion_penalties) / len(congestion_penalties) if congestion_penalties else 0
+        
+        # Get pheromone values, default to 1.0 if not initialized
+        pheromone_values = [graph[node][neighbor][edge_id].get('pheromone', 1.0) for _, neighbor, edge_id in graph.edges(node, keys=True)]
+        avg_pheromone = sum(pheromone_values) / len(pheromone_values) if pheromone_values else 0
+        
+        # Higher pheromones should reduce cost (preferred paths)
+        return euclidean_dist / max_speed + avg_congestion_penalty - (avg_pheromone * 0.1)  # Adjust weight as needed
+    
+    return heuristic
 
 def calculate_turn_penalty(prev_edge, current_edge):
     # Calculate the turn penalty based on the angle difference between the previous edge and the current edge
@@ -53,8 +60,6 @@ def calculate_turn_penalty(prev_edge, current_edge):
     return angle_diff / 180  # Adjust the turn penalty based on the sharpness of the turn
 
 def a_star(graph, pos, start_node, end_node):
-    # Extract the graph from the network file
-
     # Initialize the previous edge
     prev_edge = None
 
@@ -71,6 +76,45 @@ def a_star(graph, pos, start_node, end_node):
     heuristic = real_time_traffic_heuristic(graph, pos, end_node)
     # heuristic = lambda u, v: euclidean_distance(u, v, pos)
     node_path = nx.astar_path(graph, start_node, end_node, heuristic=heuristic, weight=update_weights)
+
+    print(f"Computed node path: {node_path}")
+
+    # Convert the node path to an edge path
+    edge_path = get_edge_path(graph, node_path)
+
+    print(f"Computed edge path: {edge_path}")
+
+    return edge_path
+
+def a_star_traffic_pheromone(graph, pos, start_node, end_node):
+    # Initialize the previous edge
+    prev_edge = None
+
+    def update_weights(u, v, d):
+        # Update the edge weights with the real-time traffic information and turn penalty
+        nonlocal prev_edge
+        current_edge = list(d.keys())[0]  # Get the edge key
+        weight = d[current_edge]['weight']
+        turn_penalty = calculate_turn_penalty(prev_edge, current_edge)
+        prev_edge = current_edge
+        return weight + turn_penalty
+
+
+    heuristic = real_time_traffic_pheromone_heuristic(graph, pos, end_node)
+    node_path = nx.astar_path(graph, start_node, end_node, heuristic=heuristic, weight=update_weights)
+
+    print(f"Computed node path with pheromones: {node_path}")
+
+    edge_path = get_edge_path(graph, node_path)
+    print(f"Computed edge path with pheromones: {edge_path}")
+
+    return edge_path
+
+
+def a_star_euclidean(graph, pos, start_node, end_node):
+    # Compute the shortest path using A* algorithm with euclidean distance
+    heuristic = lambda u, v: euclidean_distance(u, v, pos)
+    node_path = nx.astar_path(graph, start_node, end_node, heuristic=heuristic, weight='weight')
 
     print(f"Computed node path: {node_path}")
 
