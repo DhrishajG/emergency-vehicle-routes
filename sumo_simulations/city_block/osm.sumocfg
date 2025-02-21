@@ -7,7 +7,10 @@
 
     <input>
         <net-file value="osm.net.xml.gz"/>
-        <route-files value="osm.passenger.trips.xml"/>
+        <!-- <route-files value="osm.passenger.trips.xml"/> -->
+        <!-- <route-files value="osm.medium_traffic.passenger.rou.xml"/>
+        <route-files value="osm.low_traffic.passenger.rou.xml"/> -->
+        <route-files value="osm.high_traffic.passenger.rou.xml"/>
         <additional-files value="osm.poly.xml.gz,osm.med.add.xml"/>
     </input>
 

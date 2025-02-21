@@ -55,6 +55,7 @@
 
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
     <vType id="veh_passenger" vClass="passenger"/>
+    <vType id="emergency" vClass="emergency" color="white"/>
     <trip id="veh0" type="veh_passenger" depart="0.00" departLane="best" from="27930285#15" to="1080366137#1"/>
     <trip id="veh1" type="veh_passenger" depart="6.73" departLane="best" from="4302843#4" to="28008167#1"/>
     <trip id="veh3" type="veh_passenger" depart="20.18" departLane="best" from="-987276833#17" to="-11985681#1"/>

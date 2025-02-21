@@ -14,7 +14,7 @@ def simulate_accident(accident_edge, route, num_vehicles):
         vehicle_id = f"accident_{i}"
         traci.vehicle.add(vehicle_id, routeID="", typeID="veh_passenger")
         traci.vehicle.setRoute(vehicle_id, route)
-    traci.vehicle.setStop(crash_vehicle, edgeID=accident_edge, pos=random.uniform(0, traci.lane.getLength(accident_edge + "_0")), laneIndex=0, duration=120)
+    traci.vehicle.setStop(crash_vehicle, edgeID=accident_edge, pos=random.uniform(0, traci.lane.getLength(accident_edge + "_0")), laneIndex=0, duration=300)
 
 def toggle_scenario(scenario, enable, **kwargs):
     if scenario == 'congestion':
