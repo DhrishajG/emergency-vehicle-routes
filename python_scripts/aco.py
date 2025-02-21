@@ -1,4 +1,5 @@
 import numpy as np
+import traci
 
 class AntColonyOptimization:
     def __init__(self, graph, num_ants, num_iterations, alpha=1.0, beta=2.0, evaporation_rate=0.5, pheromone_deposit=1.0):
@@ -15,8 +16,10 @@ class AntColonyOptimization:
             self.graph[u][v][k]['pheromone'] = 1.0
 
     def heuristic(self, u, v, key):
-        """Heuristic function: inverse of edge weight (travel time)."""
-        return 1.0 / self.graph[u][v][key]['weight']
+        """Heuristic function: inverse of real-time travel time."""
+        edge_id = key
+        travel_time = traci.lane.getLength(edge_id + "_0") / max(traci.edge.getLastStepMeanSpeed(edge_id), 0.1)
+        return 1.0 / travel_time
 
     def choose_next_node(self, current_node, visited):
         """Choose the next node for an ant based on pheromone and heuristic information."""
@@ -26,9 +29,9 @@ class AntColonyOptimization:
 
         probabilities = []
         for neighbor in neighbors:
-            # Get the key for the edge with the minimum weight
+            # Get the key for the edge with the minimum travel time
             try:
-                key = min(self.graph[current_node][neighbor], key=lambda x: self.graph[current_node][neighbor][x]['weight'])
+                key = min(self.graph[current_node][neighbor], key=lambda x: traci.lane.getLength(x + "_0") / max(traci.edge.getLastStepMeanSpeed(x), 0.1))
                 edge = (current_node, neighbor, key)
                 pheromone = self.graph[current_node][neighbor][key]['pheromone'] ** self.alpha
                 heuristic = self.heuristic(current_node, neighbor, key) ** self.beta
@@ -74,8 +77,8 @@ class AntColonyOptimization:
                     u = path[i]
                     v = path[i + 1]
                     try:
-                        key = min(self.graph[u][v], key=lambda x: self.graph[u][v][x]['weight'])
-                        path_length += self.graph[u][v][key]['weight']
+                        key = min(self.graph[u][v], key=lambda x: traci.lane.getLength(x + "_0") / max(traci.edge.getLastStepMeanSpeed(x), 0.1))
+                        path_length += traci.lane.getLength(key + "_0") / max(traci.edge.getLastStepMeanSpeed(key), 0.1)
                     except KeyError as e:
                         path_length = float('inf')
                         break
@@ -106,9 +109,9 @@ class AntColonyOptimization:
                 u = path[i]
                 v = path[i + 1]
         
-                # Get the key for the edge with the minimum weight
+                # Get the key for the edge with the minimum travel time
                 try:
-                    key = min(self.graph[u][v], key=lambda x: self.graph[u][v][x]['weight'])
+                    key = min(self.graph[u][v], key=lambda x: traci.lane.getLength(x + "_0") / max(traci.edge.getLastStepMeanSpeed(x), 0.1))
                     self.graph[u][v][key]['pheromone'] += self.pheromone_deposit / length
                     if self.graph[u][v][key]['pheromone'] <= 0:
                         self.graph[u][v][key]['pheromone'] = 1e-10  # Reset to a small positive value
