@@ -14,11 +14,17 @@ def run_algorithm(algorithm, algorithm_name, graph, pos):
     results = []
     ambulance_index = 0
     total_ambulances = len(AMBULANCES)
+    continueACO = True
 
     while traci.simulation.getMinExpectedNumber() > 0:
         traci.simulationStep()
-        if traci.simulation.getTime() % 100 == 0 and algorithm == a_star_traffic_pheromone:
-            print("Updating pheromones...")
+        if traci.simulation.getTime() % 100 == 0 and algorithm == a_star_traffic_pheromone and continueACO:
+            old_graph = graph
+            print("Copied old graph")
+            graph, pos = extract_graph(NETWORK_FILE, old_graph=old_graph)
+            print("Extracted new graph")
+            _ = aco_shortest_path(graph, start_node, end_node, num_ants=90)
+            print("Ran ACO")
         if traci.simulation.getTime() % 500 == 0 and ambulance_index < total_ambulances:
             ambulance_id, start_node, end_node = AMBULANCES[ambulance_index]
             if algorithm_name == "Dijkstra":
@@ -45,6 +51,8 @@ def run_algorithm(algorithm, algorithm_name, graph, pos):
                     sim_time = traci.simulation.getTime()
                     results.append((ambulance_id, algorithm_name, sim_time - start_time))
                     traci.vehicle.remove(vehicle_id)
+                    if ambulance_id == AMBULANCES[-1][0]:
+                        continueACO = False
 
     return results
 

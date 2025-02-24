@@ -27,7 +27,7 @@ def extract_graph(network_file, old_graph=None):
 
             pheromone = 1.0
 
-            if old_graph is not None:
+            if old_graph is not None and old_graph.has_edge(from_node, to_node, key=edge_id):
                 pheromone = old_graph[from_node][to_node][edge_id].get('pheromone', 1.0)
 
             graph.add_edge(from_node, to_node, key=edge_id, weight=weight, pheromone=pheromone)
