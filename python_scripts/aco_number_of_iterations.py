@@ -50,7 +50,7 @@ def main():
             # traci.close()
             # simulation_times.append(time)
 
-        with open('simulation_times.csv', 'w', newline='') as csvfile:
+        with open('../outputs/simulation_times.csv', 'w', newline='') as csvfile:
             csvwriter = csv.writer(csvfile)
             csvwriter.writerow(['Number of Iterations', 'Average Simulation Time'])
             for iter, time in zip(NUM_ITERATIONS, simulation_times):

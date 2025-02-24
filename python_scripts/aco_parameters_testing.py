@@ -14,7 +14,7 @@ END_NODE = EndNode.kyoto.value
 NUM_ANTS = list(range(50, 101, 10)) 
 BETA_VALUES = [2.0, 3.0, 4.0, 5.0]
 AMBULANCE_ID = "ambulance_1"
-CSV_FILE = "parameter_testing_results.csv"
+CSV_FILE = "../outputs/parameter_testing_results.csv"
 
 def main():
     try:
