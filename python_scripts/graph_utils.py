@@ -3,7 +3,7 @@ import traci
 import networkx as nx
 import matplotlib.pyplot as plt
 
-def extract_graph(network_file):
+def extract_graph(network_file, old_graph=None):
     graph = nx.MultiDiGraph()
     net = sumolib.net.readNet(network_file)
 
@@ -18,12 +18,19 @@ def extract_graph(network_file):
             edge_id = edge.getID()
             from_node = edge.getFromNode().getID()
             to_node = edge.getToNode().getID()
-            weight = edge.getLength() / edge.getSpeed()
+            length = edge.getLength()
+            speed = max(traci.edge.getLastStepMeanSpeed(edge_id), 0.1)  # Avoid division by zero
+            weight = length / speed  # Real-time travel time as weight
         
             if traci.edge.getLaneNumber(edge_id) == 1:
                 weight *= 1.2  # Narrow road penalty
 
-            graph.add_edge(from_node, to_node, key=edge_id, weight=weight)
+            pheromone = 1.0
+
+            if old_graph is not None:
+                pheromone = old_graph[from_node][to_node][edge_id].get('pheromone', 1.0)
+
+            graph.add_edge(from_node, to_node, key=edge_id, weight=weight, pheromone=pheromone)
             edge_labels[(from_node, to_node)] = f"{weight:.2f}"
     
     # Draw the graph representation of the road network

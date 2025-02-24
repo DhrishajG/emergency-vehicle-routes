@@ -47,9 +47,11 @@ def real_time_traffic_pheromone_heuristic(graph, pos, goal):
         # Get pheromone values, default to 1.0 if not initialized
         pheromone_values = [graph[node][neighbor][edge_id].get('pheromone', 1.0) for _, neighbor, edge_id in graph.edges(node, keys=True)]
         avg_pheromone = sum(pheromone_values) / len(pheromone_values) if pheromone_values else 0
+
+        weight = avg_travel_time + avg_congestion_penalty + avg_congestion_penalty
         
         # Higher pheromones should reduce cost (preferred paths)
-        return avg_travel_time + avg_congestion_penalty + avg_congestion_penalty - (avg_pheromone * 0.1)  # Adjust weight as needed
+        return weight/(1 - avg_pheromone) if avg_pheromone != 1.0 else weight
     
     return heuristic
 
@@ -143,9 +145,9 @@ def djikstra(graph, start_node, end_node):
 
     return edge_path
 
-def aco_shortest_path(graph, start_node, end_node, num_ants=30):
+def aco_shortest_path(graph, start_node, end_node, num_ants=30, beta=2.0, num_iterations=100):
     # Find the best path using ACO
-    aco = AntColonyOptimization(graph, num_ants=num_ants, num_iterations=100)
+    aco = AntColonyOptimization(graph, num_ants=num_ants, num_iterations=num_iterations, beta=beta)
     aco_path, aco_length = aco.optimize(start_node, end_node)
     # print(f"Best path: {aco_path}, Cost: {aco_length}")
 

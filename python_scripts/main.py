@@ -1,6 +1,6 @@
 import traci
 from ambulance_simulation import add_ambulance, track_ambulance, end_simulation
-from algorithms import a_star, djikstra, aco_shortest_path
+from algorithms import a_star, djikstra, aco_shortest_path, a_star_traffic_pheromone
 from constants import ConfigFile, NetworkFile, StartNode, EndNode, CongestionPath, AccidentEdge
 from graph_utils import extract_graph
 from traffic_simulations import toggle_scenario
@@ -21,7 +21,7 @@ def main():
         print("SUMO simulation started successfully!")
 
         # Add random congestion to the specified edge
-        toggle_scenario('accident', enable=True, route=CONGESTION_ROUTE, accident_edge=ACCIDENT_EDGE, num_vehicles=15)
+        toggle_scenario('accident', enable=True, route=CONGESTION_ROUTE, accident_edge=ACCIDENT_EDGE, num_vehicles=15, duration=300)
 
         # Run some initial steps
         for step in range(200):  # Simulate for 100 steps
@@ -31,7 +31,8 @@ def main():
 
         # edge_path = djikstra(graph, START_NODE, END_NODE)
         edge_path = a_star(graph, pos, START_NODE, END_NODE)
-        # edge_path = aco_shortest_path(graph, START_NODE, END_NODE, num_ants=90)
+        # edge_path = a_star_traffic_pheromone(graph, pos, START_NODE, END_NODE)
+        # edge_path = aco_shortest_path(graph, START_NODE, END_NODE, num_ants=90, beta=2.0)
 
         end_edge = edge_path[-1]
 
