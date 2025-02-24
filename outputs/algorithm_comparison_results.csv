@@ -1,0 +1,21 @@
+Ambulance_ID,Algorithm,Simulation_Time
+a1,Dijkstra,107.0
+a2,Dijkstra,134.0
+a3,Dijkstra,68.0
+a4,Dijkstra,41.0
+a5,Dijkstra,42.0
+a1,A*,105.0
+a2,A*,137.0
+a3,A*,68.0
+a4,A*,41.0
+a5,A*,46.0
+a1,A* Euclidean,121.0
+a2,A* Euclidean,196.0
+a3,A* Euclidean,68.0
+a4,A* Euclidean,40.0
+a5,A* Euclidean,43.0
+a1,A* ACO,105.0
+a2,A* ACO,137.0
+a3,A* ACO,68.0
+a4,A* ACO,41.0
+a5,A* ACO,46.0

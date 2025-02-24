@@ -1,64 +1,82 @@
 import traci
-import matplotlib.pyplot as plt
-from algorithms import a_star, djikstra
+import csv
+from algorithms import a_star, djikstra, aco_shortest_path, a_star_euclidean, a_star_traffic_pheromone
 from constants import ConfigFile, NetworkFile, AmbulanceRoutes
 from ambulance_simulation import add_ambulance, end_simulation, track_ambulance
 from graph_utils import extract_graph
 
-CONFIG_FILE = ConfigFile.city_block.value
-NETWORK_FILE = NetworkFile.city_block.value
-AMBULANCES = AmbulanceRoutes.city_block.value
+CONFIG_FILE = ConfigFile.kyoto.value
+NETWORK_FILE = NetworkFile.kyoto.value
+AMBULANCES = AmbulanceRoutes.kyoto.value
+CSV_FILE = "../outputs/algorithm_comparison_results.csv"
+
+def run_algorithm(algorithm, algorithm_name, graph, pos):
+    results = []
+    ambulance_index = 0
+    total_ambulances = len(AMBULANCES)
+
+    while traci.simulation.getMinExpectedNumber() > 0:
+        traci.simulationStep()
+        if traci.simulation.getTime() % 100 == 0 and algorithm == a_star_traffic_pheromone:
+            print("Updating pheromones...")
+        if traci.simulation.getTime() % 500 == 0 and ambulance_index < total_ambulances:
+            ambulance_id, start_node, end_node = AMBULANCES[ambulance_index]
+            if algorithm_name == "Dijkstra":
+                edge_path = djikstra(graph, start_node, end_node)
+            elif algorithm_name == "A*":
+                edge_path = a_star(graph, pos, start_node, end_node)
+            elif algorithm_name == "A* Euclidean":
+                edge_path = a_star_euclidean(graph, pos, start_node, end_node)
+            elif algorithm_name == "A* ACO":
+                edge_path = a_star_traffic_pheromone(graph, pos, start_node, end_node)
+            else:
+                raise ValueError(f"Unknown algorithm: {algorithm_name}")
+
+            end_edge = edge_path[-1]
+            start_time = traci.simulation.getTime()
+            add_ambulance(f"{ambulance_id}_{algorithm_name}", edge_path, start_node, end_node)
+            ambulance_index += 1
+
+        for ambulance_id, start_node, end_node in AMBULANCES:
+            vehicle_id = f"{ambulance_id}_{algorithm_name}"
+            if vehicle_id in traci.vehicle.getIDList():
+                current_edge = traci.vehicle.getRoadID(vehicle_id)
+                if current_edge == end_edge:
+                    sim_time = traci.simulation.getTime()
+                    results.append((ambulance_id, algorithm_name, sim_time - start_time))
+                    traci.vehicle.remove(vehicle_id)
+
+    return results
 
 def main():
     try:
-        djikstra_times = []
-        a_star_times = []
-        for ambulance_id, start_node, end_node in AMBULANCES:
+        results = []
+
+        algorithms = [
+            (djikstra, "Dijkstra"),
+            (a_star, "A*"),
+            (a_star_euclidean, "A* Euclidean"),
+            (a_star_traffic_pheromone, "A* ACO")
+        ]
+
+        for algorithm, algorithm_name in algorithms:
             # Start the SUMO simulation
             traci.start(["sumo", "-c", CONFIG_FILE])
+            print(f"SUMO simulation started successfully for {algorithm_name}!")
+
             graph, pos = extract_graph(NETWORK_FILE)
-            edge_path = djikstra(graph, start_node, end_node)
 
-            end_edge = edge_path[-1]
+            algorithm_results = run_algorithm(algorithm, algorithm_name, graph, pos)
+            results.extend(algorithm_results)
 
-            # Add an ambulance to the simulation with the computed path
-            add_ambulance(ambulance_id, edge_path, start_node, end_node)
-
-            # Track the ambulance until it reaches its destination
-            time = track_ambulance(ambulance_id, end_edge, end_node)
             traci.close()
-            djikstra_times.append(time)
-        
-        for ambulance_id, start_node, end_node in AMBULANCES:
-            # Start the SUMO simulation
-            print("ambulance", ambulance_id)
-            traci.start(["sumo", "-c", CONFIG_FILE])
-            graph, pos = extract_graph(NETWORK_FILE)
-            edge_path = a_star(graph, pos, start_node, end_node)
 
-            end_edge = edge_path[-1]
-
-            # Add an ambulance to the simulation with the computed path
-            add_ambulance(ambulance_id, edge_path, start_node, end_node)
-
-            # Track the ambulance until it reaches its destination
-            time = track_ambulance(ambulance_id, end_edge, end_node)
-            traci.close()
-            a_star_times.append(time)
-
-        # Plot the results
-        ambulance_indices = range(len(AMBULANCES))
-        bar_width = 0.35
-
-        plt.figure(figsize=(10, 5))
-        plt.bar(ambulance_indices, djikstra_times, width=bar_width, label='Dijkstra', align='center')
-        plt.bar([i + bar_width for i in ambulance_indices], a_star_times, width=bar_width, label='A*', align='center')
-        plt.xlabel('Ambulance Index')
-        plt.ylabel('Time (s)')
-        plt.title('Comparison of Dijkstra and A* Algorithms')
-        plt.legend()
-        plt.grid(True)
-        plt.show()
+        # Write the results to the CSV file
+        with open(CSV_FILE, mode='w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(["Ambulance_ID", "Algorithm", "Simulation_Time"])
+            for ambulance_id, algorithm_name, time in results:
+                writer.writerow([ambulance_id, algorithm_name, time])
  
     except traci.exceptions.FatalTraCIError as e:
         print(f"TraCI error during simulation: {e}")
