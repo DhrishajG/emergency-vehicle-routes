@@ -11,10 +11,6 @@ class AntColonyOptimization:
         self.evaporation_rate = evaporation_rate
         self.pheromone_deposit = pheromone_deposit
 
-        # Initialize pheromone values on the graph
-        # for u, v, k in self.graph.edges(keys=True):
-        #     self.graph[u][v][k]['pheromone'] = 1.0
-
     def heuristic(self, u, v, key):
         """Heuristic function: inverse of edge weight (travel time)."""
         return 1.0 / self.graph[u][v][key]['weight']
