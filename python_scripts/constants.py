@@ -23,12 +23,14 @@ class NetworkFile(Enum):
     city_block = "../sumo_simulations/city_block/osm.net.xml.gz"
     kyoto = "../sumo_simulations/kyoto/osm.net.xml.gz"
     salt_lake_city = "../sumo_simulations/salt_lake_city/osm.net.xml.gz"
+    more_kyoto = "../sumo_simulations/more_kyoto/osm.net.xml.gz"
 
 class ConfigFile(Enum):
     small_block = "../sumo_simulations/small_block/osm.sumocfg"
     city_block = "../sumo_simulations/city_block/osm.sumocfg"
     kyoto = "../sumo_simulations/kyoto/osm.sumocfg"
     salt_lake_city = "../sumo_simulations/salt_lake_city/osm.sumocfg"
+    more_kyoto = "../sumo_simulations/more_kyoto/osm.sumocfg"
 
 class CongestionPath(Enum):
     small_block = ["628003088#2", "648408521#0","648408521#2", "648408521#4", "648408521#6", "648408521#9", "648408521#10", "1266310080#1"]
@@ -50,9 +52,16 @@ class AmbulanceRoutes(Enum):
         ("a8", "cluster_11594016602_11594016604_25423456", "cluster_28889609_643133_8239185538_8239185541_#4more")
     ]
     kyoto = [
-        ("a1", "402756569", "5832017725"),
-        ("a2", "11001012538", "372657189"),
-        ("a3", "354847841", "356288174"),
-        ("a4", "cluster_2737069339_2737069341_332507385_3834323572_#4more", "cluster_434344373_4600871790"),
-        ("a5", "cluster_2624724422_2731038428_2731038430_2731038462_#4more", "cluster_243798390_2731038331_2731038332_2731038334_#4more"),
+        ("a1", "11229751026", "cluster_296273837_305536678_8395574235_8395574236"),
+        ("a2", "11229751026", "224811905"),
+        ("a3", "11229751026", "cluster_2779294170_3834303011"),
+        ("a4", "11229751026", "cluster_2779294109_2786882566_2786882573_2786882578_#1more"),
+        ("a5", "11229751026", "cluster_1210995650_243797749_2775013077_2779294177_#8more"),
+    ]
+    more_kyoto = [
+        ("a1", "cluster_2785660385_2785660386_2785660394_3017663036_#3more", "438102563"),
+        ("a2", "cluster_2785660385_2785660386_2785660394_3017663036_#3more", "cluster_2125132333_433922486_5601313537_5601313538_#1more"),
+        ("a3", "cluster_2785660385_2785660386_2785660394_3017663036_#3more", "cluster_2779294170_3834303011"),
+        ("a4", "cluster_2785660385_2785660386_2785660394_3017663036_#3more", "2125132356"),
+        ("a5", "cluster_2785660385_2785660386_2785660394_3017663036_#3more", "308221501"),
     ]

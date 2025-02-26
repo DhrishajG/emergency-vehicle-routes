@@ -2,7 +2,7 @@ import networkx as nx
 import numpy as np
 
 class AntColonyOptimization:
-    def __init__(self, graph, num_ants, num_iterations, alpha=1.0, beta=2.0, evaporation_rate=0.5, pheromone_deposit=1.0):
+    def __init__(self, graph, num_ants, num_iterations, alpha=1.0, beta=2.0, evaporation_rate=0.3, pheromone_deposit=5.0):
         self.graph = graph
         self.num_ants = num_ants
         self.num_iterations = num_iterations
@@ -89,8 +89,8 @@ class AntColonyOptimization:
         # Evaporate pheromones on all edges
         for u, v, k in self.graph.edges(keys=True):
             self.graph[u][v][k]['pheromone'] *= (1 - self.evaporation_rate)
-            if self.graph[u][v][k]['pheromone'] <= 0:
-                self.graph[u][v][k]['pheromone'] = 1e-10  # Reset to a small positive value
+            if self.graph[u][v][k]['pheromone'] <= 0 or self.graph[u][v][k]['pheromone'] <= 1e-3:
+                self.graph[u][v][k]['pheromone'] = 1e-3  # Reset to a small positive value
 
         # Update pheromones for valid paths
         for path, length in zip(paths, path_lengths):
@@ -107,8 +107,8 @@ class AntColonyOptimization:
                 try:
                     key = min(self.graph[u][v], key=lambda x: self.graph[u][v][x]['weight'])
                     self.graph[u][v][key]['pheromone'] += self.pheromone_deposit / length
-                    if self.graph[u][v][key]['pheromone'] <= 0:
-                        self.graph[u][v][key]['pheromone'] = 1e-10  # Reset to a small positive value
+                    if self.graph[u][v][key]['pheromone'] <= 0 or self.graph[u][v][k]['pheromone'] <= 1e-3:
+                        self.graph[u][v][key]['pheromone'] = 1e-3  # Reset to a small positive value
                 except KeyError as e:
                     continue
 

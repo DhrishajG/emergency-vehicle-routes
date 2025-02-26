@@ -48,10 +48,11 @@ def real_time_traffic_pheromone_heuristic(graph, pos, goal):
         pheromone_values = [graph[node][neighbor][edge_id].get('pheromone', 1.0) for _, neighbor, edge_id in graph.edges(node, keys=True)]
         avg_pheromone = sum(pheromone_values) / len(pheromone_values) if pheromone_values else 0
 
-        weight = avg_travel_time + avg_congestion_penalty + avg_congestion_penalty
+        weight = avg_travel_time + avg_congestion_penalty
+        alpha = 2
         
         # Higher pheromones should reduce cost (preferred paths)
-        return weight/(1 - avg_pheromone) if avg_pheromone != 1.0 else weight
+        return weight/(1 + alpha*avg_pheromone)
     
     return heuristic
 
