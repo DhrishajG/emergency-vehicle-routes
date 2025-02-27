@@ -5,10 +5,10 @@ from constants import ConfigFile, NetworkFile, StartNode, EndNode, CongestionPat
 from graph_utils import extract_graph
 from traffic_simulations import toggle_scenario
 
-CONFIG_FILE = ConfigFile.city_block.value
-NETWORK_FILE = NetworkFile.city_block.value
-START_NODE = StartNode.city_block.value
-END_NODE = EndNode.city_block.value
+CONFIG_FILE = ConfigFile.kyoto.value
+NETWORK_FILE = NetworkFile.kyoto.value
+START_NODE = StartNode.kyoto.value
+END_NODE = EndNode.kyoto.value
 AMBULANCE_ID = "ambulance_1"
 CONGESTION_ROUTE = CongestionPath.city_block.value
 ACCIDENT_EDGE = AccidentEdge.city_block.value
@@ -21,7 +21,7 @@ def main():
         print("SUMO simulation started successfully!")
 
         # Add random congestion to the specified edge
-        toggle_scenario('accident', enable=True, route=CONGESTION_ROUTE, accident_edge=ACCIDENT_EDGE, num_vehicles=15, duration=300)
+        toggle_scenario('accident', enable=False, route=CONGESTION_ROUTE, accident_edge=ACCIDENT_EDGE, num_vehicles=15, duration=300)
 
         # Run some initial steps
         for step in range(200):  # Simulate for 100 steps
@@ -30,8 +30,9 @@ def main():
         graph, pos = extract_graph(NETWORK_FILE)
 
         # edge_path = djikstra(graph, START_NODE, END_NODE)
-        edge_path = a_star(graph, pos, START_NODE, END_NODE)
-        # edge_path = a_star_traffic_pheromone(graph, pos, START_NODE, END_NODE)
+        # edge_path = a_star(graph, pos, START_NODE, END_NODE)
+        _ = aco_shortest_path(graph, START_NODE, END_NODE, num_ants=100)
+        edge_path = a_star_traffic_pheromone(graph, pos, START_NODE, END_NODE)
         # edge_path = aco_shortest_path(graph, START_NODE, END_NODE, num_ants=90, beta=2.0)
 
         end_edge = edge_path[-1]
