@@ -24,7 +24,7 @@ def main():
         toggle_scenario('accident', enable=False, route=CONGESTION_ROUTE, accident_edge=ACCIDENT_EDGE, num_vehicles=15, duration=300)
 
         # Run some initial steps
-        for step in range(200):  # Simulate for 100 steps
+        for step in range(200):  # Simulate for 200 steps
             traci.simulationStep()  # Advance the simulation by one step
 
         graph, pos = extract_graph(NETWORK_FILE)
