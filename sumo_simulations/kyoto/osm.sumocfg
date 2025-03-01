@@ -9,9 +9,10 @@
         <net-file value="osm.net.xml.gz"/>
         <!-- <route-files value="osm_pt.rou.xml"/> -->
         <!-- <route-files value="osm.passenger.rou.crazy.xml"/> -->
-        <route-files value="osm.passenger.rou.high.xml"/>
+        <!-- <route-files value="osm.passenger.rou.high.xml"/> -->
         <!-- <route-files value="osm.passenger.rou.medium.xml"/> -->
-        <!-- <route-files value="osm.passenger.rou.low.xml"/> -->
+        <route-files value="osm.passenger.rou.low.xml"/>
+        <!-- <route-files value="osm.passenger.rou.traffic.xml"/> -->
         <additional-files value="osm.poly.xml.gz,osm.med.add.xml"/>
     </input>
 

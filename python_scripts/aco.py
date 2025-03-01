@@ -89,7 +89,7 @@ class AntColonyOptimization:
         # Evaporate pheromones on all edges
         for u, v, k in self.graph.edges(keys=True):
             self.graph[u][v][k]['pheromone'] *= (1 - self.evaporation_rate)
-            if self.graph[u][v][k]['pheromone'] <= 0 or self.graph[u][v][k]['pheromone'] <= 1e-3:
+            if self.graph[u][v][k]['pheromone'] <= 0:
                 self.graph[u][v][k]['pheromone'] = 1e-3  # Reset to a small positive value
 
         # Update pheromones for valid paths
@@ -107,7 +107,7 @@ class AntColonyOptimization:
                 try:
                     key = min(self.graph[u][v], key=lambda x: self.graph[u][v][x]['weight'])
                     self.graph[u][v][key]['pheromone'] += self.pheromone_deposit / length
-                    if self.graph[u][v][key]['pheromone'] <= 0 or self.graph[u][v][k]['pheromone'] <= 1e-3:
+                    if self.graph[u][v][key]['pheromone'] <= 0:
                         self.graph[u][v][key]['pheromone'] = 1e-3  # Reset to a small positive value
                 except KeyError as e:
                     continue

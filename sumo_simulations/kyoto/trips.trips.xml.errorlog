@@ -1,9 +1,10 @@
-Warning: At actuated tlLogic 'cluster_10692263891_10692272122_2737069493_2737069494_#6more', actuated phase 2 has no controlling detector.
-Warning: At actuated tlLogic 'cluster_10692263891_10692272122_2737069493_2737069494_#6more', linkIndex 1,2,3,4 has no controlling detector.
-Warning: At actuated tlLogic 'cluster_2731038423_2731038424_2731038457_2731038543_#6more', linkIndex 22 has no controlling detector.
-Warning: At actuated tlLogic 'cluster_307683989_5306639425_5317895727_5317895728_#2more', actuated phase 2 has no controlling detector.
-Warning: At actuated tlLogic 'cluster_307683989_5306639425_5317895727_5317895728_#2more', linkIndex 7,8,9,10,24,25,26 has no controlling detector.
-Warning: At actuated tlLogic 'joinedS_2085444287_2781236945', linkIndex 7,8 has no controlling detector.
-Warning: At actuated tlLogic 'joinedS_2367201382_2367201383_cluster_12177684511_12177684512_1318728450_2367201391_#7more', actuated phase 5 has no controlling detector.
-Warning: At actuated tlLogic 'joinedS_2367201382_2367201383_cluster_12177684511_12177684512_1318728450_2367201391_#7more', linkIndex 33,34,37 has no controlling detector.
-Warning: 7 total messages of type: At actuated tlLogic '%', linkIndex % has no controlling detector.
+Error: The lane 273276548#3_0 to use within the access '10949479923' is not known.
+Error: The lane 28402285#5_0 to use within the access '10949479923' is not known.
+Error: The lane 760686785#1_0 to use within the access '10949479923' is not known.
+Error: The lane 273276548#4_0 to use within the access '339086117' is not known.
+Error: The lane 28402285#5_0 to use within the access '339086117' is not known.
+Error: The lane 555756332#2_0 to use within the access '339086117' is not known.
+Error: The lane 760686785#2_0 to use within the access '339086117' is not known.
+Error: The lane 28382576#3_0 to use within the busStop '4893246676' is not known.
+Error: Could not end a stopping place that is not opened.
+Quitting (on error).

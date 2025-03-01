@@ -7,10 +7,10 @@ from constants import ConfigFile, NetworkFile, AmbulanceRoutes
 from ambulance_simulation import add_ambulance, end_simulation, track_ambulance
 from graph_utils import extract_graph
 
-CONFIG_FILE = ConfigFile.more_kyoto.value
-NETWORK_FILE = NetworkFile.more_kyoto.value
-AMBULANCES = AmbulanceRoutes.more_kyoto.value
-CSV_FILE = "../outputs/algorithm_comparison_results.csv"
+CONFIG_FILE = ConfigFile.kyoto.value
+NETWORK_FILE = NetworkFile.kyoto.value
+AMBULANCES = AmbulanceRoutes.kyoto_routes.value
+CSV_FILE = "../outputs/algorithm_comparison_results_kyoto.csv"
 
 def run_algorithm(algorithm, algorithm_name, graph, pos):
     results = []
@@ -28,7 +28,7 @@ def run_algorithm(algorithm, algorithm_name, graph, pos):
             print("Copied old graph")
             graph, pos = extract_graph(NETWORK_FILE, old_graph=old_graph)
             print("Extracted new graph")
-            _ = aco_shortest_path(graph, start_node, end_node, num_ants=100)
+            _ = aco_shortest_path(graph, start_node, end_node, num_ants=120, beta=2.5)
             print("Ran ACO")
             aco_time_end = time.time()
             aco_time_overhead += (aco_time_end - aco_time_start)
@@ -40,7 +40,7 @@ def run_algorithm(algorithm, algorithm_name, graph, pos):
 
             if algorithm_name == "Dijkstra":
                 edge_path = djikstra(graph, start_node, end_node)
-            elif algorithm_name == "A*":
+            elif algorithm_name == "A* Real Time":
                 edge_path = a_star(graph, pos, start_node, end_node)
             elif algorithm_name == "A* Euclidean":
                 edge_path = a_star_euclidean(graph, pos, start_node, end_node)
@@ -78,7 +78,7 @@ def main():
 
         algorithms = [
             (djikstra, "Dijkstra"),
-            (a_star, "A*"),
+            (a_star, "A* Real Time"),
             (a_star_euclidean, "A* Euclidean"),
             (a_star_traffic_pheromone, "A* ACO")
         ]

@@ -2,57 +2,66 @@ import traci
 import csv
 import matplotlib.pyplot as plt
 from algorithms import aco_shortest_path
-from constants import ConfigFile, NetworkFile, StartNode, EndNode
+from constants import ConfigFile, NetworkFile, AmbulanceRoutes
 from ambulance_simulation import add_ambulance, end_simulation, track_ambulance
 from graph_utils import extract_graph
 
 CONFIG_FILE = ConfigFile.kyoto.value
 NETWORK_FILE = NetworkFile.kyoto.value
-START_NODE = StartNode.kyoto.value
-END_NODE = EndNode.kyoto.value
+AMBULANCES = AmbulanceRoutes.kyoto.value
 
-NUM_ANTS = list(range(50, 101, 10)) 
-BETA_VALUES = [2.0, 3.0, 4.0, 5.0]
+NUM_ANTS = list(range(50, 201, 10)) 
+BETA_VALUES = [2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]
 AMBULANCE_ID = "ambulance_1"
-CSV_FILE = "../outputs/parameter_testing_results.csv"
+ANTS_CSV_FILE = "../outputs/ants_testing_results.csv"
+BETA_CSV_FILE = "../outputs/beta_testing_results.csv"
 
 def main():
     try:
-        simulation_times = {beta: [] for beta in BETA_VALUES}
-        with open(CSV_FILE, mode='w', newline='') as file:
+        with open(BETA_CSV_FILE, mode='w', newline='') as file:
             writer = csv.writer(file)
-            writer.writerow(["Num_Ants", "Beta", "Simulation_Time"])
+            writer.writerow(["Ambulance_ID", "Beta", "Route_Time"])
 
-            for ants in NUM_ANTS:
+            for ambulance_id, start_node, end_node in AMBULANCES[:5]:
                 for beta in BETA_VALUES:
                     traci.start(["sumo", "-c", CONFIG_FILE])
                     graph, _ = extract_graph(NETWORK_FILE)
-                    edge_path = aco_shortest_path(graph, START_NODE, END_NODE, num_ants=ants, beta=beta)
+                    edge_path = aco_shortest_path(graph, start_node, end_node, num_ants=100, beta=beta)
 
                     end_edge = edge_path[-1]
 
                     # Add an ambulance to the simulation with the computed path
-                    add_ambulance(AMBULANCE_ID, edge_path, START_NODE, END_NODE)
+                    add_ambulance(ambulance_id, edge_path, start_node, end_node)
 
                     # Track the ambulance until it reaches its destination
-                    time = track_ambulance(AMBULANCE_ID, end_edge, END_NODE)
+                    time = track_ambulance(ambulance_id, end_edge, end_node)
                     traci.close()
-                    simulation_times[beta].append(time)
 
                     # Write the results to the CSV file
-                    writer.writerow([ants, beta, time])
+                    writer.writerow([ambulance_id, beta, time])
 
-        # Plot the individual simulation times for each beta value
-        plt.figure(figsize=(10, 6))
-        for beta, times in simulation_times.items():
-            plt.plot(NUM_ANTS, times, marker='o', label=f'Beta {beta}')
-        plt.xlabel('Number of Ants')
-        plt.ylabel('Simulation Time')
-        plt.title('Simulation Time vs Number of Ants for Each Beta Value')
-        plt.legend()
-        plt.grid(True)
-        plt.show()
- 
+        with open(ANTS_CSV_FILE, mode='w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(["Ambulance_ID", "Num_Ants", "Route_Time"])
+
+            for ambulance_id, start_node, end_node in AMBULANCES:
+                for ant in NUM_ANTS:
+                    traci.start(["sumo", "-c", CONFIG_FILE])
+                    graph, _ = extract_graph(NETWORK_FILE)
+                    edge_path = aco_shortest_path(graph, start_node, end_node, num_ants=ant, beta=2.0)
+
+                    end_edge = edge_path[-1]
+
+                    # Add an ambulance to the simulation with the computed path
+                    add_ambulance(ambulance_id, edge_path, start_node, end_node)
+
+                    # Track the ambulance until it reaches its destination
+                    time = track_ambulance(ambulance_id, end_edge, end_node)
+                    traci.close()
+
+                    # Write the results to the CSV file
+                    writer.writerow([ambulance_id, ant, time])
+
     except traci.exceptions.FatalTraCIError as e:
         print(f"TraCI error during simulation: {e}")
     except Exception as e:
