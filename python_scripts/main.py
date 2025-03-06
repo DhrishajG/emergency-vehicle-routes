@@ -10,8 +10,9 @@ NETWORK_FILE = NetworkFile.kyoto.value
 START_NODE = StartNode.kyoto.value
 END_NODE = EndNode.kyoto.value
 AMBULANCE_ID = "ambulance_1"
-CONGESTION_ROUTE = CongestionPath.city_block.value
-ACCIDENT_EDGE = AccidentEdge.city_block.value
+CONGESTION_ROUTE = CongestionPath.kyoto.value
+ACCIDENT_EDGE = AccidentEdge.kyoto.value
+RUN_ACO = True
 
 def main():
     """Main entry point for the simulation."""
@@ -20,20 +21,28 @@ def main():
         traci.start(["sumo-gui", "-c", CONFIG_FILE])
         print("SUMO simulation started successfully!")
 
+        graph, pos = extract_graph(NETWORK_FILE)
+
         # Add random congestion to the specified edge
-        toggle_scenario('accident', enable=False, route=CONGESTION_ROUTE, accident_edge=ACCIDENT_EDGE, num_vehicles=15, duration=300)
+        toggle_scenario('accident', enable=True, route=CONGESTION_ROUTE, accident_edge=ACCIDENT_EDGE, num_vehicles=15, duration=210)
 
         # Run some initial steps
-        for step in range(200):  # Simulate for 200 steps
+        for step in range(300):  # Simulate for 300 steps
+            if step % 100 == 0 and RUN_ACO:
+                old_graph = graph
+                print("Copied old graph")
+                graph, pos = extract_graph(NETWORK_FILE, old_graph=old_graph)
+                print("Extracted new graph")
+                _ = aco_shortest_path(graph, START_NODE, END_NODE, num_ants=120, beta=2.5)
+                print("Ran ACO")
             traci.simulationStep()  # Advance the simulation by one step
-
-        graph, pos = extract_graph(NETWORK_FILE)
 
         # edge_path = djikstra(graph, START_NODE, END_NODE)
         # edge_path = a_star(graph, pos, START_NODE, END_NODE)
-        _ = aco_shortest_path(graph, START_NODE, END_NODE, num_ants=100)
         edge_path = a_star_traffic_pheromone(graph, pos, START_NODE, END_NODE)
         # edge_path = aco_shortest_path(graph, START_NODE, END_NODE, num_ants=90, beta=2.0)
+
+        toggle_scenario('accident', enable=True, route=CONGESTION_ROUTE, accident_edge=ACCIDENT_EDGE, num_vehicles=15, duration=210, prefix="new_accident")
 
         end_edge = edge_path[-1]
 

@@ -3,7 +3,7 @@ from enum import Enum
 class StartNode(Enum):
     small_block = "25445347" 
     city_block = "cluster_1496838998_9238240945_9238240946"
-    kyoto = "402756569"
+    kyoto = "402756574"
     salt_lake_city = "cluster_1581511473_6617107590_6617107592_6617107594_#1more"
 
 class EndNode(Enum):
@@ -35,10 +35,12 @@ class ConfigFile(Enum):
 class CongestionPath(Enum):
     small_block = ["628003088#2", "648408521#0","648408521#2", "648408521#4", "648408521#6", "648408521#9", "648408521#10", "1266310080#1"]
     city_block = ["-780336#7", "-780336#6", "-780336#5", "-780336#4", "-780336#3", "-780336#2", "-1003177677#0"]
+    kyoto = ["462356798#18", "978085963#10", "978085963#13", "31714632#25"]
 
 class AccidentEdge(Enum):
     small_block = "648408521#2"
     city_block = "-780336#5"
+    kyoto = "462356798#18"
 
 class AmbulanceRoutes(Enum):
     city_block = [

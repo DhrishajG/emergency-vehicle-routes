@@ -8,10 +8,10 @@ def add_random_congestion(route, num_vehicles, speed=2):
         traci.vehicle.setRoute(vehicle_id, route)
         traci.vehicle.setSpeed(vehicle_id, speed)
 
-def simulate_accident(accident_edge, route, num_vehicles, duration):
-    crash_vehicle = "accident_1"
+def simulate_accident(accident_edge, route, num_vehicles, duration, prefix="accident"):
+    crash_vehicle = f"{prefix}_1"
     for i in range(num_vehicles):
-        vehicle_id = f"accident_{i}"
+        vehicle_id = f"{prefix}_{i}"
         traci.vehicle.add(vehicle_id, routeID="", typeID="veh_passenger")
         traci.vehicle.setRoute(vehicle_id, route)
     traci.vehicle.setStop(crash_vehicle, edgeID=accident_edge, pos=random.uniform(0, traci.lane.getLength(accident_edge + "_0")), laneIndex=0, duration=duration)
