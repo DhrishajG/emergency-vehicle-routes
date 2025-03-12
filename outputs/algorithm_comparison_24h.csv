@@ -1,0 +1,97 @@
+Ambulance_ID,Algorithm,Travel_Time,Hour
+a1,Dijkstra,172.0,0
+a1,Dijkstra,172.0,1
+a1,Dijkstra,176.0,2
+a1,Dijkstra,172.0,3
+a1,Dijkstra,172.0,4
+a1,Dijkstra,189.0,5
+a1,Dijkstra,173.0,6
+a1,Dijkstra,192.0,7
+a1,Dijkstra,204.0,8
+a1,Dijkstra,175.0,9
+a1,Dijkstra,178.0,10
+a1,Dijkstra,181.0,11
+a1,Dijkstra,208.0,12
+a1,Dijkstra,196.0,13
+a1,Dijkstra,180.0,14
+a1,Dijkstra,213.0,15
+a1,Dijkstra,177.0,16
+a1,Dijkstra,218.0,17
+a1,Dijkstra,187.0,18
+a1,Dijkstra,226.0,19
+a1,Dijkstra,190.0,20
+a1,Dijkstra,180.0,21
+a1,Dijkstra,172.0,22
+a1,Dijkstra,172.0,23
+a1,A* Real Time,172.0,0
+a1,A* Real Time,172.0,1
+a1,A* Real Time,176.0,2
+a1,A* Real Time,172.0,3
+a1,A* Real Time,172.0,4
+a1,A* Real Time,189.0,5
+a1,A* Real Time,177.0,6
+a1,A* Real Time,190.0,7
+a1,A* Real Time,195.0,8
+a1,A* Real Time,190.0,9
+a1,A* Real Time,175.0,10
+a1,A* Real Time,199.0,11
+a1,A* Real Time,194.0,12
+a1,A* Real Time,187.0,13
+a1,A* Real Time,182.0,14
+a1,A* Real Time,188.0,15
+a1,A* Real Time,173.0,16
+a1,A* Real Time,206.0,17
+a1,A* Real Time,204.0,18
+a1,A* Real Time,218.0,19
+a1,A* Real Time,177.0,20
+a1,A* Real Time,172.0,21
+a1,A* Real Time,173.0,22
+a1,A* Real Time,173.0,23
+a1,A* Euclidean,178.0,0
+a1,A* Euclidean,178.0,1
+a1,A* Euclidean,188.0,2
+a1,A* Euclidean,177.0,3
+a1,A* Euclidean,178.0,4
+a1,A* Euclidean,178.0,5
+a1,A* Euclidean,198.0,6
+a1,A* Euclidean,177.0,7
+a1,A* Euclidean,210.0,8
+a1,A* Euclidean,213.0,9
+a1,A* Euclidean,179.0,10
+a1,A* Euclidean,188.0,11
+a1,A* Euclidean,200.0,12
+a1,A* Euclidean,220.0,13
+a1,A* Euclidean,212.0,14
+a1,A* Euclidean,187.0,15
+a1,A* Euclidean,181.0,16
+a1,A* Euclidean,198.0,17
+a1,A* Euclidean,225.0,18
+a1,A* Euclidean,212.0,19
+a1,A* Euclidean,178.0,20
+a1,A* Euclidean,200.0,21
+a1,A* Euclidean,179.0,22
+a1,A* Euclidean,177.0,23
+a1,A* ACO,172.0,0
+a1,A* ACO,172.0,1
+a1,A* ACO,218.0,2
+a1,A* ACO,173.0,3
+a1,A* ACO,171.0,4
+a1,A* ACO,199.0,5
+a1,A* ACO,172.0,6
+a1,A* ACO,185.0,7
+a1,A* ACO,212.0,8
+a1,A* ACO,178.0,9
+a1,A* ACO,187.0,10
+a1,A* ACO,171.0,11
+a1,A* ACO,191.0,12
+a1,A* ACO,240.0,13
+a1,A* ACO,186.0,14
+a1,A* ACO,179.0,15
+a1,A* ACO,174.0,16
+a1,A* ACO,206.0,17
+a1,A* ACO,183.0,18
+a1,A* ACO,216.0,19
+a1,A* ACO,178.0,20
+a1,A* ACO,181.0,21
+a1,A* ACO,174.0,22
+a1,A* ACO,174.0,23

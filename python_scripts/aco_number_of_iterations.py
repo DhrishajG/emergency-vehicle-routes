@@ -35,21 +35,6 @@ def main():
             avg_time = sum(trial_times) / NUM_TRIALS
             simulation_times.append(avg_time)
 
-            # Start the SUMO simulation
-            # traci.start(["sumo", "-c", CONFIG_FILE])
-            # graph, _ = extract_graph(NETWORK_FILE)
-            # edge_path = aco_shortest_path(graph, START_NODE, END_NODE, num_ants=NUM_ANTS, beta=BETA_VALUE, num_iterations=iter)
-
-            # end_edge = edge_path[-1]
-
-            # # Add an ambulance to the simulation with the computed path
-            # add_ambulance(AMBULANCE_ID, edge_path, START_NODE, END_NODE)
-
-            # # Track the ambulance until it reaches its destination
-            # time = track_ambulance(AMBULANCE_ID, end_edge, END_NODE)
-            # traci.close()
-            # simulation_times.append(time)
-
         with open('../outputs/simulation_times.csv', 'w', newline='') as csvfile:
             csvwriter = csv.writer(csvfile)
             csvwriter.writerow(['Number of Iterations', 'Average Simulation Time'])
