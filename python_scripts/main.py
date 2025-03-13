@@ -35,7 +35,7 @@ def main():
                 print("Extracted new graph")
                 _ = aco_shortest_path(graph, START_NODE, END_NODE, num_ants=120, beta=2.5)
                 print("Ran ACO")
-            traci.simulationStep()  # Advance the simulation by one step
+            traci.simulationStep()  
 
         # edge_path = djikstra(graph, START_NODE, END_NODE)
         # edge_path = a_star(graph, pos, START_NODE, END_NODE)

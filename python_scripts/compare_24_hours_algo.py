@@ -19,7 +19,7 @@ ACO_UPDATE_INTERVAL = 720
 def run_algorithm(algorithm, algorithm_name, graph, pos):
     results = []
     hour = 0
-    active_ambulances = {}  # {vehicle_id: (end_edge, start_time, edge_path)}
+    active_ambulances = {} 
     
     while traci.simulation.getTime() < TOTAL_SIM_TIME:
         current_time = traci.simulation.getTime()
@@ -39,7 +39,6 @@ def run_algorithm(algorithm, algorithm_name, graph, pos):
             for amb_id, start_node, end_node in AMBULANCES:
                 vehicle_id = f"{amb_id}_{algorithm_name}_{hour}"
                 try:
-                    # Compute path
                     if algorithm_name == "Dijkstra":
                         edge_path = djikstra(graph, start_node, end_node)
                     elif algorithm_name == "A* Real Time":
@@ -82,14 +81,12 @@ def run_algorithm(algorithm, algorithm_name, graph, pos):
                 print(f"Error tracking {vehicle_id}: {e}")
                 finished.append(vehicle_id)
         
-        # Cleanup finished ambulances
         for vehicle_id in finished:
             if vehicle_id in active_ambulances:
                 active_ambulances.pop(vehicle_id)
         
         traci.simulationStep()
     
-    # Process any remaining ambulances
     print(f"\nSimulation ended. Processing {len(active_ambulances)} remaining ambulances")
     for vehicle_id, (_, start_time, _) in active_ambulances.items():
         amb_id = vehicle_id.split('_')[0]
@@ -125,7 +122,6 @@ def main():
             print(results)
             print(algorithm_results)
             
-            # Write results for this algorithm
             with open(CSV_FILE, mode='a', newline='') as file:
                 writer = csv.writer(file)
                 for amb_id, algorithm_name, travel_time, dispatch_hour in algorithm_results:

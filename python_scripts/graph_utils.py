@@ -53,21 +53,3 @@ def get_edge_path(graph, node_path):
                 edge_path.append(key)
                 break
     return edge_path
-    
-
-def reconstruct_path(predecessors, start, end):
-    if start == end:
-        return [start]
-    if start not in predecessors or end not in predecessors:
-        raise ValueError("Start or end node not in predecessors, path cannot be reconstructed.")
-    
-    path = []
-    current = end
-    while current != start:
-        if current not in predecessors:
-            raise ValueError(f"Node {current} not in predecessors, path cannot be reconstructed.")
-        path.append(current)
-        current = predecessors[current]
-    path.append(start)
-    path.reverse()
-    return path
