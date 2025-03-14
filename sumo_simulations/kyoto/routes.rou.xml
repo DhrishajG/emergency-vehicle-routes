@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-03-14 17:42:33.678006 by randomTrips.py v1_21_0+1021-4606c0d7274
+<configuration>
+    <net-file value="osm.net.xml.gz"/>
+    <output-trip-file value="trip_files/trips_Saturday_21_00_00_00.xml"/>
+    <prefix value="veh"/>
+    <trip-attributes value="departLane=&quot;best&quot;"/>
+    <fringe-start-attributes value="departSpeed=&quot;max&quot;"/>
+    <vehicle-class value="passenger"/>
+    <lanes value="True"/>
+    <allow-fringe.min-length value="1000.0"/>
+    <via-edge-types value="highway.motorway,highway.motorway_link,highway.trunk_link,highway.primary_link,highway.secondary_link,highway.tertiary_link"/>
+    <min-distance value="300.0"/>
+    <min-distance.fringe value="10.0"/>
+    <remove-loops value="True"/>
+    <validate value="True"/>
+    <begin value="594000.0"/>
+    <end value="518400.0"/>
+    <insertion-density value="20.0"/>
+</configuration>
+-->
+
+<!-- generated on 2025-03-14 17:42:33 by Eclipse SUMO duarouter Version v1_21_0+1021-4606c0d7274
+<duarouterConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="osm.net.xml.gz"/>
+        <route-files value="trip_files/trips_Saturday_21_00_00_00.xml"/>
+    </input>
+
+    <output>
+        <output-file value="routes.rou.xml"/>
+        <alternatives-output value="NUL"/>
+    </output>
+
+    <processing>
+        <remove-loops value="true"/>
+    </processing>
+
+    <time>
+        <begin value="594000.0"/>
+        <end value="518400.0"/>
+    </time>
+
+    <report>
+        <no-warnings value="true"/>
+        <ignore-errors value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+</duarouterConfiguration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd"/>

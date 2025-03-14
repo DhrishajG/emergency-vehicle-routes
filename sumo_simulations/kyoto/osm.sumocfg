@@ -13,7 +13,8 @@
         <!-- <route-files value="osm.passenger.rou.medium.xml"/> -->
         <!-- <route-files value="osm.passenger.rou.low.xml"/> -->
         <!-- <route-files value="osm.passenger.rou.traffic.xml"/> -->
-        <route-files value="osm.passenger.trips.24h.xml"/>
+        <!-- <route-files value="osm.passenger.trips.24h.xml"/> -->
+        <route-files value="osm.passenger.trips.week.xml"/>
         <additional-files value="osm.poly.xml.gz,osm.med.add.xml"/>
     </input>
 
