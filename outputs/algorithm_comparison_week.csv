@@ -1,0 +1,673 @@
+Ambulance_ID,Algorithm,Travel_Time,Hour
+a1,Dijkstra,172.0,0
+a1,Dijkstra,193.0,1
+a1,Dijkstra,172.0,2
+a1,Dijkstra,184.0,3
+a1,Dijkstra,186.0,4
+a1,Dijkstra,172.0,5
+a1,Dijkstra,176.0,6
+a1,Dijkstra,182.0,7
+a1,Dijkstra,180.0,8
+a1,Dijkstra,175.0,9
+a1,Dijkstra,172.0,10
+a1,Dijkstra,178.0,11
+a1,Dijkstra,215.0,12
+a1,Dijkstra,201.0,13
+a1,Dijkstra,206.0,14
+a1,Dijkstra,197.0,15
+a1,Dijkstra,217.0,16
+a1,Dijkstra,201.0,17
+a1,Dijkstra,184.0,18
+a1,Dijkstra,183.0,19
+a1,Dijkstra,216.0,20
+a1,Dijkstra,201.0,21
+a1,Dijkstra,171.0,22
+a1,Dijkstra,171.0,23
+a1,Dijkstra,173.0,24
+a1,Dijkstra,176.0,25
+a1,Dijkstra,173.0,26
+a1,Dijkstra,172.0,27
+a1,Dijkstra,171.0,28
+a1,Dijkstra,187.0,29
+a1,Dijkstra,187.0,30
+a1,Dijkstra,207.0,31
+a1,Dijkstra,192.0,32
+a1,Dijkstra,277.0,33
+a1,Dijkstra,180.0,34
+a1,Dijkstra,185.0,35
+a1,Dijkstra,184.0,36
+a1,Dijkstra,209.0,37
+a1,Dijkstra,195.0,38
+a1,Dijkstra,200.0,39
+a1,Dijkstra,230.0,40
+a1,Dijkstra,211.0,41
+a1,Dijkstra,201.0,42
+a1,Dijkstra,220.0,43
+a1,Dijkstra,206.0,44
+a1,Dijkstra,172.0,45
+a1,Dijkstra,172.0,46
+a1,Dijkstra,172.0,47
+a1,Dijkstra,171.0,48
+a1,Dijkstra,171.0,49
+a1,Dijkstra,172.0,50
+a1,Dijkstra,172.0,51
+a1,Dijkstra,172.0,52
+a1,Dijkstra,172.0,53
+a1,Dijkstra,173.0,54
+a1,Dijkstra,177.0,55
+a1,Dijkstra,179.0,56
+a1,Dijkstra,192.0,57
+a1,Dijkstra,263.0,58
+a1,Dijkstra,173.0,59
+a1,Dijkstra,196.0,60
+a1,Dijkstra,213.0,61
+a1,Dijkstra,190.0,62
+a1,Dijkstra,182.0,63
+a1,Dijkstra,227.0,64
+a1,Dijkstra,226.0,65
+a1,Dijkstra,203.0,66
+a1,Dijkstra,198.0,67
+a1,Dijkstra,190.0,68
+a1,Dijkstra,178.0,69
+a1,Dijkstra,172.0,70
+a1,Dijkstra,172.0,71
+a1,Dijkstra,171.0,72
+a1,Dijkstra,172.0,73
+a1,Dijkstra,172.0,74
+a1,Dijkstra,172.0,75
+a1,Dijkstra,172.0,76
+a1,Dijkstra,177.0,77
+a1,Dijkstra,195.0,78
+a1,Dijkstra,186.0,79
+a1,Dijkstra,176.0,80
+a1,Dijkstra,203.0,81
+a1,Dijkstra,203.0,82
+a1,Dijkstra,191.0,83
+a1,Dijkstra,173.0,84
+a1,Dijkstra,189.0,85
+a1,Dijkstra,229.0,86
+a1,Dijkstra,241.0,87
+a1,Dijkstra,266.0,88
+a1,Dijkstra,230.0,89
+a1,Dijkstra,189.0,90
+a1,Dijkstra,252.0,91
+a1,Dijkstra,175.0,92
+a1,Dijkstra,190.0,93
+a1,Dijkstra,170.0,94
+a1,Dijkstra,172.0,95
+a1,Dijkstra,173.0,96
+a1,Dijkstra,172.0,97
+a1,Dijkstra,171.0,98
+a1,Dijkstra,172.0,99
+a1,Dijkstra,172.0,100
+a1,Dijkstra,178.0,101
+a1,Dijkstra,190.0,102
+a1,Dijkstra,187.0,103
+a1,Dijkstra,180.0,104
+a1,Dijkstra,287.0,105
+a1,Dijkstra,198.0,106
+a1,Dijkstra,204.0,107
+a1,Dijkstra,199.0,108
+a1,Dijkstra,200.0,109
+a1,Dijkstra,226.0,110
+a1,Dijkstra,193.0,111
+a1,Dijkstra,209.0,112
+a1,Dijkstra,225.0,113
+a1,Dijkstra,196.0,114
+a1,Dijkstra,219.0,115
+a1,Dijkstra,172.0,116
+a1,Dijkstra,185.0,117
+a1,Dijkstra,172.0,118
+a1,Dijkstra,172.0,119
+a1,Dijkstra,172.0,120
+a1,Dijkstra,181.0,121
+a1,Dijkstra,181.0,122
+a1,Dijkstra,172.0,123
+a1,Dijkstra,172.0,124
+a1,Dijkstra,189.0,125
+a1,Dijkstra,180.0,126
+a1,Dijkstra,186.0,127
+a1,Dijkstra,189.0,128
+a1,Dijkstra,184.0,129
+a1,Dijkstra,225.0,130
+a1,Dijkstra,188.0,131
+a1,Dijkstra,217.0,132
+a1,Dijkstra,181.0,133
+a1,Dijkstra,214.0,134
+a1,Dijkstra,202.0,135
+a1,Dijkstra,231.0,136
+a1,Dijkstra,263.0,137
+a1,Dijkstra,191.0,138
+a1,Dijkstra,184.0,139
+a1,Dijkstra,181.0,140
+a1,Dijkstra,178.0,141
+a1,Dijkstra,173.0,142
+a1,Dijkstra,172.0,143
+a1,Dijkstra,172.0,144
+a1,Dijkstra,176.0,145
+a1,Dijkstra,172.0,146
+a1,Dijkstra,172.0,147
+a1,Dijkstra,174.0,148
+a1,Dijkstra,172.0,149
+a1,Dijkstra,197.0,150
+a1,Dijkstra,187.0,151
+a1,Dijkstra,207.0,152
+a1,Dijkstra,199.0,153
+a1,Dijkstra,195.0,154
+a1,Dijkstra,189.0,155
+a1,Dijkstra,202.0,156
+a1,Dijkstra,255.0,157
+a1,Dijkstra,257.0,158
+a1,Dijkstra,253.0,159
+a1,Dijkstra,251.0,160
+a1,Dijkstra,190.0,161
+a1,Dijkstra,213.0,162
+a1,Dijkstra,189.0,163
+a1,Dijkstra,239.0,164
+a1,Dijkstra,235.0,165
+a1,Dijkstra,172.0,166
+a1,Dijkstra,172.0,167
+a1,A* Real Time,172.0,0
+a1,A* Real Time,193.0,1
+a1,A* Real Time,172.0,2
+a1,A* Real Time,184.0,3
+a1,A* Real Time,186.0,4
+a1,A* Real Time,172.0,5
+a1,A* Real Time,176.0,6
+a1,A* Real Time,182.0,7
+a1,A* Real Time,180.0,8
+a1,A* Real Time,175.0,9
+a1,A* Real Time,172.0,10
+a1,A* Real Time,178.0,11
+a1,A* Real Time,215.0,12
+a1,A* Real Time,190.0,13
+a1,A* Real Time,212.0,14
+a1,A* Real Time,249.0,15
+a1,A* Real Time,241.0,16
+a1,A* Real Time,219.0,17
+a1,A* Real Time,180.0,18
+a1,A* Real Time,181.0,19
+a1,A* Real Time,216.0,20
+a1,A* Real Time,184.0,21
+a1,A* Real Time,171.0,22
+a1,A* Real Time,173.0,23
+a1,A* Real Time,172.0,24
+a1,A* Real Time,172.0,25
+a1,A* Real Time,172.0,26
+a1,A* Real Time,172.0,27
+a1,A* Real Time,172.0,28
+a1,A* Real Time,205.0,29
+a1,A* Real Time,172.0,30
+a1,A* Real Time,193.0,31
+a1,A* Real Time,181.0,32
+a1,A* Real Time,214.0,33
+a1,A* Real Time,184.0,34
+a1,A* Real Time,190.0,35
+a1,A* Real Time,203.0,36
+a1,A* Real Time,190.0,37
+a1,A* Real Time,224.0,38
+a1,A* Real Time,184.0,39
+a1,A* Real Time,229.0,40
+a1,A* Real Time,223.0,41
+a1,A* Real Time,170.0,42
+a1,A* Real Time,234.0,43
+a1,A* Real Time,172.0,44
+a1,A* Real Time,195.0,45
+a1,A* Real Time,172.0,46
+a1,A* Real Time,171.0,47
+a1,A* Real Time,172.0,48
+a1,A* Real Time,172.0,49
+a1,A* Real Time,179.0,50
+a1,A* Real Time,171.0,51
+a1,A* Real Time,171.0,52
+a1,A* Real Time,184.0,53
+a1,A* Real Time,180.0,54
+a1,A* Real Time,186.0,55
+a1,A* Real Time,178.0,56
+a1,A* Real Time,212.0,57
+a1,A* Real Time,235.0,58
+a1,A* Real Time,187.0,59
+a1,A* Real Time,203.0,60
+a1,A* Real Time,203.0,61
+a1,A* Real Time,187.0,62
+a1,A* Real Time,174.0,63
+a1,A* Real Time,222.0,64
+a1,A* Real Time,196.0,65
+a1,A* Real Time,208.0,66
+a1,A* Real Time,238.0,67
+a1,A* Real Time,187.0,68
+a1,A* Real Time,202.0,69
+a1,A* Real Time,171.0,70
+a1,A* Real Time,172.0,71
+a1,A* Real Time,172.0,72
+a1,A* Real Time,172.0,73
+a1,A* Real Time,172.0,74
+a1,A* Real Time,171.0,75
+a1,A* Real Time,172.0,76
+a1,A* Real Time,189.0,77
+a1,A* Real Time,171.0,78
+a1,A* Real Time,189.0,79
+a1,A* Real Time,188.0,80
+a1,A* Real Time,236.0,81
+a1,A* Real Time,216.0,82
+a1,A* Real Time,183.0,83
+a1,A* Real Time,210.0,84
+a1,A* Real Time,181.0,85
+a1,A* Real Time,184.0,86
+a1,A* Real Time,215.0,87
+a1,A* Real Time,223.0,88
+a1,A* Real Time,199.0,89
+a1,A* Real Time,180.0,90
+a1,A* Real Time,234.0,91
+a1,A* Real Time,192.0,92
+a1,A* Real Time,174.0,93
+a1,A* Real Time,171.0,94
+a1,A* Real Time,171.0,95
+a1,A* Real Time,172.0,96
+a1,A* Real Time,172.0,97
+a1,A* Real Time,172.0,98
+a1,A* Real Time,172.0,99
+a1,A* Real Time,171.0,100
+a1,A* Real Time,177.0,101
+a1,A* Real Time,188.0,102
+a1,A* Real Time,191.0,103
+a1,A* Real Time,182.0,104
+a1,A* Real Time,234.0,105
+a1,A* Real Time,179.0,106
+a1,A* Real Time,204.0,107
+a1,A* Real Time,206.0,108
+a1,A* Real Time,195.0,109
+a1,A* Real Time,213.0,110
+a1,A* Real Time,170.0,111
+a1,A* Real Time,221.0,112
+a1,A* Real Time,200.0,113
+a1,A* Real Time,208.0,114
+a1,A* Real Time,243.0,115
+a1,A* Real Time,193.0,116
+a1,A* Real Time,184.0,117
+a1,A* Real Time,172.0,118
+a1,A* Real Time,172.0,119
+a1,A* Real Time,172.0,120
+a1,A* Real Time,172.0,121
+a1,A* Real Time,171.0,122
+a1,A* Real Time,173.0,123
+a1,A* Real Time,171.0,124
+a1,A* Real Time,205.0,125
+a1,A* Real Time,172.0,126
+a1,A* Real Time,177.0,127
+a1,A* Real Time,211.0,128
+a1,A* Real Time,199.0,129
+a1,A* Real Time,252.0,130
+a1,A* Real Time,179.0,131
+a1,A* Real Time,197.0,132
+a1,A* Real Time,181.0,133
+a1,A* Real Time,225.0,134
+a1,A* Real Time,193.0,135
+a1,A* Real Time,216.0,136
+a1,A* Real Time,230.0,137
+a1,A* Real Time,199.0,138
+a1,A* Real Time,187.0,139
+a1,A* Real Time,189.0,140
+a1,A* Real Time,195.0,141
+a1,A* Real Time,172.0,142
+a1,A* Real Time,172.0,143
+a1,A* Real Time,172.0,144
+a1,A* Real Time,172.0,145
+a1,A* Real Time,172.0,146
+a1,A* Real Time,195.0,147
+a1,A* Real Time,186.0,148
+a1,A* Real Time,173.0,149
+a1,A* Real Time,194.0,150
+a1,A* Real Time,187.0,151
+a1,A* Real Time,220.0,152
+a1,A* Real Time,173.0,153
+a1,A* Real Time,176.0,154
+a1,A* Real Time,206.0,155
+a1,A* Real Time,232.0,156
+a1,A* Real Time,188.0,157
+a1,A* Real Time,196.0,158
+a1,A* Real Time,219.0,159
+a1,A* Real Time,251.0,160
+a1,A* Real Time,209.0,161
+a1,A* Real Time,185.0,162
+a1,A* Real Time,216.0,163
+a1,A* Real Time,181.0,164
+a1,A* Real Time,174.0,165
+a1,A* Real Time,172.0,166
+a1,A* Real Time,172.0,167
+a1,A* Euclidean,178.0,0
+a1,A* Euclidean,180.0,1
+a1,A* Euclidean,178.0,2
+a1,A* Euclidean,179.0,3
+a1,A* Euclidean,206.0,4
+a1,A* Euclidean,177.0,5
+a1,A* Euclidean,195.0,6
+a1,A* Euclidean,187.0,7
+a1,A* Euclidean,203.0,8
+a1,A* Euclidean,192.0,9
+a1,A* Euclidean,219.0,10
+a1,A* Euclidean,248.0,11
+a1,A* Euclidean,182.0,12
+a1,A* Euclidean,200.0,13
+a1,A* Euclidean,220.0,14
+a1,A* Euclidean,198.0,15
+a1,A* Euclidean,212.0,16
+a1,A* Euclidean,230.0,17
+a1,A* Euclidean,194.0,18
+a1,A* Euclidean,215.0,19
+a1,A* Euclidean,185.0,20
+a1,A* Euclidean,190.0,21
+a1,A* Euclidean,177.0,22
+a1,A* Euclidean,178.0,23
+a1,A* Euclidean,178.0,24
+a1,A* Euclidean,178.0,25
+a1,A* Euclidean,179.0,26
+a1,A* Euclidean,178.0,27
+a1,A* Euclidean,178.0,28
+a1,A* Euclidean,209.0,29
+a1,A* Euclidean,208.0,30
+a1,A* Euclidean,181.0,31
+a1,A* Euclidean,168.0,32
+a1,A* Euclidean,199.0,33
+a1,A* Euclidean,188.0,34
+a1,A* Euclidean,188.0,35
+a1,A* Euclidean,201.0,36
+a1,A* Euclidean,185.0,37
+a1,A* Euclidean,202.0,38
+a1,A* Euclidean,207.0,39
+a1,A* Euclidean,195.0,40
+a1,A* Euclidean,180.0,41
+a1,A* Euclidean,206.0,42
+a1,A* Euclidean,207.0,43
+a1,A* Euclidean,178.0,44
+a1,A* Euclidean,183.0,45
+a1,A* Euclidean,179.0,46
+a1,A* Euclidean,179.0,47
+a1,A* Euclidean,178.0,48
+a1,A* Euclidean,179.0,49
+a1,A* Euclidean,182.0,50
+a1,A* Euclidean,179.0,51
+a1,A* Euclidean,178.0,52
+a1,A* Euclidean,187.0,53
+a1,A* Euclidean,189.0,54
+a1,A* Euclidean,197.0,55
+a1,A* Euclidean,188.0,56
+a1,A* Euclidean,229.0,57
+a1,A* Euclidean,182.0,58
+a1,A* Euclidean,237.0,59
+a1,A* Euclidean,229.0,60
+a1,A* Euclidean,179.0,61
+a1,A* Euclidean,229.0,62
+a1,A* Euclidean,187.0,63
+a1,A* Euclidean,212.0,64
+a1,A* Euclidean,206.0,65
+a1,A* Euclidean,203.0,66
+a1,A* Euclidean,234.0,67
+a1,A* Euclidean,177.0,68
+a1,A* Euclidean,186.0,69
+a1,A* Euclidean,178.0,70
+a1,A* Euclidean,178.0,71
+a1,A* Euclidean,179.0,72
+a1,A* Euclidean,179.0,73
+a1,A* Euclidean,186.0,74
+a1,A* Euclidean,185.0,75
+a1,A* Euclidean,178.0,76
+a1,A* Euclidean,191.0,77
+a1,A* Euclidean,204.0,78
+a1,A* Euclidean,189.0,79
+a1,A* Euclidean,187.0,80
+a1,A* Euclidean,278.0,81
+a1,A* Euclidean,233.0,82
+a1,A* Euclidean,186.0,83
+a1,A* Euclidean,180.0,84
+a1,A* Euclidean,200.0,85
+a1,A* Euclidean,218.0,86
+a1,A* Euclidean,178.0,87
+a1,A* Euclidean,245.0,88
+a1,A* Euclidean,215.0,89
+a1,A* Euclidean,217.0,90
+a1,A* Euclidean,239.0,91
+a1,A* Euclidean,195.0,92
+a1,A* Euclidean,179.0,93
+a1,A* Euclidean,179.0,94
+a1,A* Euclidean,178.0,95
+a1,A* Euclidean,179.0,96
+a1,A* Euclidean,178.0,97
+a1,A* Euclidean,178.0,98
+a1,A* Euclidean,177.0,99
+a1,A* Euclidean,177.0,100
+a1,A* Euclidean,207.0,101
+a1,A* Euclidean,179.0,102
+a1,A* Euclidean,180.0,103
+a1,A* Euclidean,179.0,104
+a1,A* Euclidean,189.0,105
+a1,A* Euclidean,220.0,106
+a1,A* Euclidean,179.0,107
+a1,A* Euclidean,191.0,108
+a1,A* Euclidean,179.0,109
+a1,A* Euclidean,201.0,110
+a1,A* Euclidean,216.0,111
+a1,A* Euclidean,209.0,112
+a1,A* Euclidean,203.0,113
+a1,A* Euclidean,199.0,114
+a1,A* Euclidean,254.0,115
+a1,A* Euclidean,177.0,116
+a1,A* Euclidean,217.0,117
+a1,A* Euclidean,178.0,118
+a1,A* Euclidean,179.0,119
+a1,A* Euclidean,178.0,120
+a1,A* Euclidean,178.0,121
+a1,A* Euclidean,178.0,122
+a1,A* Euclidean,178.0,123
+a1,A* Euclidean,177.0,124
+a1,A* Euclidean,184.0,125
+a1,A* Euclidean,177.0,126
+a1,A* Euclidean,179.0,127
+a1,A* Euclidean,185.0,128
+a1,A* Euclidean,224.0,129
+a1,A* Euclidean,211.0,130
+a1,A* Euclidean,188.0,131
+a1,A* Euclidean,204.0,132
+a1,A* Euclidean,179.0,133
+a1,A* Euclidean,212.0,134
+a1,A* Euclidean,183.0,135
+a1,A* Euclidean,204.0,136
+a1,A* Euclidean,182.0,137
+a1,A* Euclidean,193.0,138
+a1,A* Euclidean,227.0,139
+a1,A* Euclidean,193.0,140
+a1,A* Euclidean,197.0,141
+a1,A* Euclidean,177.0,142
+a1,A* Euclidean,178.0,143
+a1,A* Euclidean,179.0,144
+a1,A* Euclidean,184.0,145
+a1,A* Euclidean,182.0,146
+a1,A* Euclidean,207.0,147
+a1,A* Euclidean,192.0,148
+a1,A* Euclidean,190.0,149
+a1,A* Euclidean,184.0,150
+a1,A* Euclidean,181.0,151
+a1,A* Euclidean,233.0,152
+a1,A* Euclidean,182.0,153
+a1,A* Euclidean,206.0,154
+a1,A* Euclidean,207.0,155
+a1,A* Euclidean,186.0,156
+a1,A* Euclidean,239.0,157
+a1,A* Euclidean,301.0,158
+a1,A* Euclidean,208.0,159
+a1,A* Euclidean,199.0,160
+a1,A* Euclidean,189.0,161
+a1,A* Euclidean,216.0,162
+a1,A* Euclidean,234.0,163
+a1,A* Euclidean,202.0,164
+a1,A* Euclidean,205.0,165
+a1,A* Euclidean,179.0,166
+a1,A* Euclidean,178.0,167
+a1,A* ACO,172.0,0
+a1,A* ACO,193.0,1
+a1,A* ACO,172.0,2
+a1,A* ACO,184.0,3
+a1,A* ACO,186.0,4
+a1,A* ACO,172.0,5
+a1,A* ACO,174.0,6
+a1,A* ACO,171.0,7
+a1,A* ACO,183.0,8
+a1,A* ACO,178.0,9
+a1,A* ACO,185.0,10
+a1,A* ACO,197.0,11
+a1,A* ACO,232.0,12
+a1,A* ACO,186.0,13
+a1,A* ACO,202.0,14
+a1,A* ACO,206.0,15
+a1,A* ACO,204.0,16
+a1,A* ACO,231.0,17
+a1,A* ACO,180.0,18
+a1,A* ACO,183.0,19
+a1,A* ACO,214.0,20
+a1,A* ACO,192.0,21
+a1,A* ACO,171.0,22
+a1,A* ACO,172.0,23
+a1,A* ACO,172.0,24
+a1,A* ACO,173.0,25
+a1,A* ACO,172.0,26
+a1,A* ACO,172.0,27
+a1,A* ACO,176.0,28
+a1,A* ACO,183.0,29
+a1,A* ACO,181.0,30
+a1,A* ACO,171.0,31
+a1,A* ACO,209.0,32
+a1,A* ACO,173.0,33
+a1,A* ACO,196.0,34
+a1,A* ACO,178.0,35
+a1,A* ACO,178.0,36
+a1,A* ACO,184.0,37
+a1,A* ACO,213.0,38
+a1,A* ACO,187.0,39
+a1,A* ACO,201.0,40
+a1,A* ACO,201.0,41
+a1,A* ACO,186.0,42
+a1,A* ACO,234.0,43
+a1,A* ACO,177.0,44
+a1,A* ACO,194.0,45
+a1,A* ACO,172.0,46
+a1,A* ACO,173.0,47
+a1,A* ACO,172.0,48
+a1,A* ACO,192.0,49
+a1,A* ACO,172.0,50
+a1,A* ACO,172.0,51
+a1,A* ACO,173.0,52
+a1,A* ACO,178.0,53
+a1,A* ACO,175.0,54
+a1,A* ACO,185.0,55
+a1,A* ACO,215.0,56
+a1,A* ACO,210.0,57
+a1,A* ACO,234.0,58
+a1,A* ACO,191.0,59
+a1,A* ACO,210.0,60
+a1,A* ACO,192.0,61
+a1,A* ACO,199.0,62
+a1,A* ACO,187.0,63
+a1,A* ACO,229.0,64
+a1,A* ACO,197.0,65
+a1,A* ACO,202.0,66
+a1,A* ACO,257.0,67
+a1,A* ACO,191.0,68
+a1,A* ACO,181.0,69
+a1,A* ACO,172.0,70
+a1,A* ACO,172.0,71
+a1,A* ACO,172.0,72
+a1,A* ACO,174.0,73
+a1,A* ACO,178.0,74
+a1,A* ACO,171.0,75
+a1,A* ACO,170.0,76
+a1,A* ACO,174.0,77
+a1,A* ACO,207.0,78
+a1,A* ACO,203.0,79
+a1,A* ACO,177.0,80
+a1,A* ACO,233.0,81
+a1,A* ACO,194.0,82
+a1,A* ACO,184.0,83
+a1,A* ACO,210.0,84
+a1,A* ACO,201.0,85
+a1,A* ACO,199.0,86
+a1,A* ACO,186.0,87
+a1,A* ACO,190.0,88
+a1,A* ACO,253.0,89
+a1,A* ACO,176.0,90
+a1,A* ACO,207.0,91
+a1,A* ACO,172.0,92
+a1,A* ACO,184.0,93
+a1,A* ACO,172.0,94
+a1,A* ACO,172.0,95
+a1,A* ACO,172.0,96
+a1,A* ACO,199.0,97
+a1,A* ACO,178.0,98
+a1,A* ACO,173.0,99
+a1,A* ACO,171.0,100
+a1,A* ACO,207.0,101
+a1,A* ACO,192.0,102
+a1,A* ACO,201.0,103
+a1,A* ACO,180.0,104
+a1,A* ACO,186.0,105
+a1,A* ACO,177.0,106
+a1,A* ACO,191.0,107
+a1,A* ACO,181.0,108
+a1,A* ACO,194.0,109
+a1,A* ACO,194.0,110
+a1,A* ACO,243.0,111
+a1,A* ACO,214.0,112
+a1,A* ACO,198.0,113
+a1,A* ACO,207.0,114
+a1,A* ACO,203.0,115
+a1,A* ACO,187.0,116
+a1,A* ACO,183.0,117
+a1,A* ACO,172.0,118
+a1,A* ACO,172.0,119
+a1,A* ACO,172.0,120
+a1,A* ACO,181.0,121
+a1,A* ACO,171.0,122
+a1,A* ACO,172.0,123
+a1,A* ACO,172.0,124
+a1,A* ACO,175.0,125
+a1,A* ACO,175.0,126
+a1,A* ACO,204.0,127
+a1,A* ACO,176.0,128
+a1,A* ACO,187.0,129
+a1,A* ACO,186.0,130
+a1,A* ACO,197.0,131
+a1,A* ACO,175.0,132
+a1,A* ACO,178.0,133
+a1,A* ACO,179.0,134
+a1,A* ACO,193.0,135
+a1,A* ACO,220.0,136
+a1,A* ACO,186.0,137
+a1,A* ACO,210.0,138
+a1,A* ACO,242.0,139
+a1,A* ACO,183.0,140
+a1,A* ACO,183.0,141
+a1,A* ACO,172.0,142
+a1,A* ACO,171.0,143
+a1,A* ACO,172.0,144
+a1,A* ACO,172.0,145
+a1,A* ACO,172.0,146
+a1,A* ACO,182.0,147
+a1,A* ACO,175.0,148
+a1,A* ACO,181.0,149
+a1,A* ACO,180.0,150
+a1,A* ACO,179.0,151
+a1,A* ACO,205.0,152
+a1,A* ACO,217.0,153
+a1,A* ACO,199.0,154
+a1,A* ACO,185.0,155
+a1,A* ACO,186.0,156
+a1,A* ACO,190.0,157
+a1,A* ACO,186.0,158
+a1,A* ACO,216.0,159
+a1,A* ACO,189.0,160
+a1,A* ACO,187.0,161
+a1,A* ACO,231.0,162
+a1,A* ACO,217.0,163
+a1,A* ACO,179.0,164
+a1,A* ACO,191.0,165
+a1,A* ACO,171.0,166
+a1,A* ACO,171.0,167
